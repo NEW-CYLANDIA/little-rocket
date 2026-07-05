@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d12y6vecq6ewb"]
+
+[ext_resource type="Script" uid="uid://i2g4sfupctu3" path="res://components/rocket/rocket.gd" id="1_r2l15"]
+[ext_resource type="Texture2D" uid="uid://c6pcjt4h6t24d" path="res://components/rocket/rocket.png" id="2_tpb7v"]
+
+[node name="Rocket" type="Node2D" unique_id=1185440983]
+script = ExtResource("1_r2l15")
+accel = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=578679037]
+texture = ExtResource("2_tpb7v")

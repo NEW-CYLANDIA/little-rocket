@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://j1oxhwcp84te"]
+
+[ext_resource type="Texture2D" uid="uid://usqgntbdp6h" path="res://effects/flash/shoot_flash.png" id="1_nnnon"]
+[ext_resource type="Script" uid="uid://d36fkiggbnnr7" path="res://effects/flash/flash.gd" id="2_hbkq1"]
+
+[node name="Flash" type="Sprite2D" unique_id=297627589]
+scale = Vector2(20, 20)
+texture = ExtResource("1_nnnon")
+script = ExtResource("2_hbkq1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1908159039]
+wait_time = 0.05

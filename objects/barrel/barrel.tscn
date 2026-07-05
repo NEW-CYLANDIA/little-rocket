@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bsknh3cairn2e"]
+
+[ext_resource type="Texture2D" uid="uid://b1l0uj77m7g6n" path="res://objects/barrel/barrel.png" id="1_rdxsi"]
+[ext_resource type="Script" uid="uid://b5j7dgcjsprhe" path="res://objects/barrel/barrel.gd" id="2_6iawg"]
+[ext_resource type="Script" uid="uid://b08i64kk02pon" path="res://components/shootable/shootable.gd" id="2_kh7lf"]
+[ext_resource type="PackedScene" uid="uid://j1oxhwcp84te" path="res://effects/flash/flash.tscn" id="3_rdxsi"]
+[ext_resource type="PackedScene" uid="uid://m05cuvw7cgrr" path="res://components/fuel_output/fuel_output.tscn" id="4_ygdis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
+size = Vector2(10, 13)
+
+[node name="Barrel" type="Node2D" unique_id=353102213]
+script = ExtResource("2_6iawg")
+
+[node name="Shootable" type="Area2D" parent="." unique_id=1462746512 node_paths=PackedStringArray("flash")]
+show_behind_parent = true
+collision_layer = 4
+script = ExtResource("2_kh7lf")
+flash = NodePath("Flash")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shootable" unique_id=486517540]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nlb7l")
+
+[node name="Flash" parent="Shootable" unique_id=297627589 instance=ExtResource("3_rdxsi")]
+visible = false
+z_index = 1
+scale = Vector2(11.999999, 13.999998)
+
+[node name="FuelOutput" parent="." unique_id=878605252 instance=ExtResource("4_ygdis")]
+amount = 10
+launch_speed = 250
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371533362]
+texture = ExtResource("1_rdxsi")
+
+[node name="Collider" type="Area2D" parent="." unique_id=2118737782]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" unique_id=1109108370]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_i0uuj")
+
+[connection signal="destroyed" from="Shootable" to="." method="_on_shootable_destroyed"]

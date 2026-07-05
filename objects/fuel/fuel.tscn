@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://damqophchcn57"]
+
+[ext_resource type="Script" uid="uid://bcv513i88dhi3" path="res://objects/fuel/fuel.gd" id="1_2yow3"]
+[ext_resource type="Texture2D" uid="uid://dnpiqkomqlhry" path="res://objects/fuel/fuel.png" id="1_gfiwy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0uuj"]
+radius = 5.0
+
+[node name="Fuel" type="Area2D" unique_id=1469934726]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_2yow3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=830323097]
+texture = ExtResource("1_gfiwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1272680653]
+shape = SubResource("CircleShape2D_i0uuj")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://m05cuvw7cgrr"]
+
+[ext_resource type="Script" uid="uid://ftggvgjxyubp" path="res://components/fuel_output/fuel_output.gd" id="1_xyx0m"]
+
+[node name="FuelOutput" type="Node2D" unique_id=878605252]
+script = ExtResource("1_xyx0m")

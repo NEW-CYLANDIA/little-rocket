@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b6ln278wmf4im"]
+
+[ext_resource type="Script" uid="uid://b08i64kk02pon" path="res://components/shootable/shootable.gd" id="1_mdgn0"]
+
+[node name="Shootable" type="Area2D" unique_id=1462746512]
+collision_layer = 4
+script = ExtResource("1_mdgn0")
