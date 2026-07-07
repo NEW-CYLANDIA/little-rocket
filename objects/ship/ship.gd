@@ -2,11 +2,10 @@ extends SimpleBody
 class_name Ship
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var rocket = $Sprite2D/Rocket
-
+@onready var gun:Gun = $Sprite2D/Gun
 
 const bullet_scene = preload("uid://dcmwoak7h3oi0")
-
-
+const explosion_prefab = preload("uid://bd3cjy5makjuh")
 
 enum ControlMode {
 	MOUSE,
@@ -15,21 +14,15 @@ enum ControlMode {
 
 @export var control_mode:ControlMode = ControlMode.WASD
 
-const explosion_prefab = preload("uid://bd3cjy5makjuh")
-
-
 var started:bool = false;
 
 var alive:bool = true;
-
-@onready var gun = $Sprite2D/Gun
 
 var wasd_direction = Vector2.UP;
 
 
 func _physics_process(delta):
 	if not alive: return;
-	
 	var direction:Vector2 = Vector2.ZERO;
 	match control_mode:
 		ControlMode.MOUSE:
@@ -40,16 +33,16 @@ func _physics_process(delta):
 			direction = wasd_direction
 	
 	rocket.on = Input.is_action_pressed("gas");
+	
+	if Input.is_action_just_pressed("fire"):
+		gun.toggle(true)
+	if Input.is_action_just_released("fire"):
+		gun.toggle(false)
 	if not is_on_floor(): sprite.rotation = direction.angle()
 	else: sprite.rotation = -PI/2;
 	
-
 	super(delta);
 	
-
-
-
-
 func die():
 	if not alive: return;
 	alive = false;

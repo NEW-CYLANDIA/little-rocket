@@ -193,7 +193,7 @@ sources/2 = SubResource("TileSetAtlasSource_e2o6t")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
 size = Vector2(8, 7)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyinl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10c2w"]
 shader = ExtResource("10_1iff4")
 shader_parameter/patch_left = 0.25
 shader_parameter/patch_top = 0.25
@@ -271,7 +271,6 @@ tile_set = SubResource("TileSet_i0uuj")
 position = Vector2(70, 156)
 collision_layer = 1
 gravity = Vector2(0, 150)
-max_speed = 140.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1644109525 node_paths=PackedStringArray("target")]
 position = Vector2(179, 89)
@@ -310,7 +309,7 @@ script = ExtResource("9_3jaai")
 forces = [NodePath("Rocket")]
 
 [node name="NinePatchSprite2D" type="Sprite2D" parent="Door" unique_id=124892756]
-material = SubResource("ShaderMaterial_uyinl")
+material = SubResource("ShaderMaterial_10c2w")
 position = Vector2(7.999996, 40)
 scale = Vector2(0.75000036, 6)
 texture = ExtResource("11_4vuph")
@@ -375,15 +374,9 @@ position = Vector2(187, 55)
 [node name="Eye" parent="Turret" unique_id=470195427 instance=ExtResource("17_uyinl")]
 position = Vector2(-7, 4)
 
-[node name="Gun" parent="Turret" unique_id=1534434290 node_paths=PackedStringArray("engine") instance=ExtResource("18_uyinl")]
+[node name="Gun" parent="Turret" unique_id=1534434290 instance=ExtResource("18_uyinl")]
 position = Vector2(-4, 4)
-always_firing = false
-engine = NodePath("../Engine")
-
-[node name="Engine" parent="Turret" unique_id=116914904 instance=ExtResource("14_3xj4h")]
-position = Vector2(-7, 9)
-rotation = 1.5707964
 
 [node name="Chain" type="Node" parent="Turret" unique_id=2028488760]
 
-[connection signal="triggered" from="Turret/Eye" to="Turret/Gun" method="shoot_burst"]
+[connection signal="triggered" from="Turret/Eye" to="Turret/Gun" method="shoot_bullet"]

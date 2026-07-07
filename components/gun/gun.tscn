@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://bccocynq72uu8"]
 
 [ext_resource type="Script" uid="uid://d3t23x1hdlno1" path="res://components/gun/gun.gd" id="1_ybrg7"]
+[ext_resource type="PackedScene" uid="uid://dcmwoak7h3oi0" path="res://components/gun/bullet/bullet.tscn" id="2_nxint"]
 [ext_resource type="Texture2D" uid="uid://dyy6jq1yoniqq" path="res://components/gun/gun.png" id="2_u3tyw"]
 
 [node name="Gun" type="Node2D" unique_id=1534434290]
 show_behind_parent = true
 script = ExtResource("1_ybrg7")
+bullet_scene = ExtResource("2_nxint")
+bullet_interval = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=601195473]
 texture = ExtResource("2_u3tyw")
 
 [node name="BulletTimer" type="Timer" parent="." unique_id=1874660336]
 wait_time = 0.2
-autostart = true

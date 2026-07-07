@@ -8,10 +8,11 @@ extends FuelInput
 func _ready():
 	if exhaust_source:
 		exhaust_particles.position = exhaust_source.position;
-	super._ready()
+	super()
 
 func get_fuel(amt:int = 1):
 	if fuel_stored >= amt:
+		exhaust_particles.restart();
 		change_fuel(-amt)
 		return true;
 	return false;

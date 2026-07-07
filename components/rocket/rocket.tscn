@@ -9,3 +9,7 @@ accel = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=578679037]
 texture = ExtResource("2_tpb7v")
+
+[node name="FuelExhaustTimer" type="Timer" parent="." unique_id=1219844124]
+wait_time = 0.2
+autostart = true

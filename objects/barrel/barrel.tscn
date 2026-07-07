@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1l0uj77m7g6n" path="res://objects/barrel/barrel.png" id="1_rdxsi"]
 [ext_resource type="Script" uid="uid://b5j7dgcjsprhe" path="res://objects/barrel/barrel.gd" id="2_6iawg"]
-[ext_resource type="Script" uid="uid://b08i64kk02pon" path="res://components/shootable/shootable.gd" id="2_kh7lf"]
+[ext_resource type="PackedScene" uid="uid://b6ln278wmf4im" path="res://components/shootable/shootable.tscn" id="2_kh7lf"]
 [ext_resource type="PackedScene" uid="uid://j1oxhwcp84te" path="res://effects/flash/flash.tscn" id="3_rdxsi"]
 [ext_resource type="PackedScene" uid="uid://m05cuvw7cgrr" path="res://components/fuel_output/fuel_output.tscn" id="4_ygdis"]
 
@@ -15,11 +15,9 @@ size = Vector2(10, 13)
 [node name="Barrel" type="Node2D" unique_id=353102213]
 script = ExtResource("2_6iawg")
 
-[node name="Shootable" type="Area2D" parent="." unique_id=1462746512 node_paths=PackedStringArray("flash")]
-show_behind_parent = true
-collision_layer = 4
-script = ExtResource("2_kh7lf")
+[node name="Shootable" parent="." unique_id=1462746512 node_paths=PackedStringArray("flash") instance=ExtResource("2_kh7lf")]
 flash = NodePath("Flash")
+explode_on_death = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shootable" unique_id=486517540]
 position = Vector2(0, -0.5)
