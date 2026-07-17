@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl0gnptskv81o"
-path="res://.godot/imported/rocket_stand.png-ba3aa873d12b4a2580f13c78e70f846f.ctex"
+path="res://.godot/imported/rocket_stand.png-21ac4db8f9ad30569a3640f487ce8c22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/rocket_stand.png"
-dest_files=["res://.godot/imported/rocket_stand.png-ba3aa873d12b4a2580f13c78e70f846f.ctex"]
+source_file="res://objects/rocket_stand/rocket_stand.png"
+dest_files=["res://.godot/imported/rocket_stand.png-21ac4db8f9ad30569a3640f487ce8c22.ctex"]
 
 [params]
 

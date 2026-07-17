@@ -6,17 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://b3nx8gjqmfo7a" path="res://objects/ship/ship.tscn" id="4_uyinl"]
 [ext_resource type="Script" uid="uid://c2wxewxyti7q6" path="res://scenes/game/camera_2d.gd" id="5_10c2w"]
 [ext_resource type="Script" uid="uid://lw0yv3cdwa3o" path="res://objects/portal/portal.gd" id="6_pg2xm"]
+[ext_resource type="PackedScene" uid="uid://bp3cax5ntyc57" path="res://objects/rocket_stand/rocket_stand.tscn" id="7_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://diw12fh1uxap4" path="res://objects/portal/portal.png" id="7_gc57s"]
-[ext_resource type="Texture2D" uid="uid://bl0gnptskv81o" path="res://objects/rocket_stand.png" id="8_8b66f"]
 [ext_resource type="Script" uid="uid://c0ijctrk68mxl" path="res://objects/simple_body.gd" id="9_3jaai"]
 [ext_resource type="Shader" uid="uid://blfw7l1mf8j1m" path="res://addons/lbg.godot.ninepatchsprite2d/nine_patch_sprite2d.gdshader" id="10_1iff4"]
 [ext_resource type="Texture2D" uid="uid://cdivjgb3w0otw" path="res://objects/box/door.png" id="11_4vuph"]
 [ext_resource type="Script" uid="uid://ug8dbn5sbe3u" path="res://addons/lbg.godot.ninepatchsprite2d/nine_patch_sprite2d.gd" id="12_wdnak"]
 [ext_resource type="PackedScene" uid="uid://3voeoisfjmqv" path="res://components/engine/engine.tscn" id="14_3xj4h"]
 [ext_resource type="PackedScene" uid="uid://d12y6vecq6ewb" path="res://components/rocket/rocket.tscn" id="14_5v6r0"]
-[ext_resource type="Script" uid="uid://p5cbv5l1aw22" path="res://objects/bounce_pad/bounce_pad.gd" id="14_fty5b"]
-[ext_resource type="Texture2D" uid="uid://c3b1vtxh7av05" path="res://objects/bounce_pad/bounce_pad-sheet.png" id="15_l2dhg"]
+[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="14_uyinl"]
 [ext_resource type="PackedScene" uid="uid://dl5ietspq13u1" path="res://components/eye/eye.tscn" id="17_uyinl"]
+[ext_resource type="Texture2D" uid="uid://dgk48b220fhru" path="res://components/wheel/wheel.png" id="18_10c2w"]
+[ext_resource type="Script" uid="uid://dp0k111g3g3g6" path="res://components/wheel/wheel.gd" id="18_pg2xm"]
 [ext_resource type="PackedScene" uid="uid://bccocynq72uu8" path="res://components/gun/gun.tscn" id="18_uyinl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
@@ -190,10 +191,7 @@ sources/2 = SubResource("TileSetAtlasSource_e2o6t")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i0uuj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
-size = Vector2(8, 7)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyinl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5v6r0"]
 shader = ExtResource("10_1iff4")
 shader_parameter/patch_left = 0.25
 shader_parameter/patch_top = 0.25
@@ -209,50 +207,6 @@ shader_parameter/debug_color = Vector4(1, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
 size = Vector2(12, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ruo"]
-size = Vector2(6, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rvswv"]
-atlas = ExtResource("15_l2dhg")
-region = Rect2(10, 0, 10, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_boyg6"]
-atlas = ExtResource("15_l2dhg")
-region = Rect2(20, 0, 10, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_80cx4"]
-atlas = ExtResource("15_l2dhg")
-region = Rect2(0, 0, 10, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e8heu"]
-atlas = ExtResource("15_l2dhg")
-region = Rect2(0, 0, 10, 12)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i0uuj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rvswv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_boyg6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_80cx4")
-}],
-"loop": 0,
-"name": &"bounce",
-"speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e8heu")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 5.0
-}]
 
 [node name="Game" type="Node2D" unique_id=2144015312]
 script = ExtResource("1_otnwt")
@@ -273,11 +227,6 @@ collision_layer = 1
 gravity = Vector2(0, 150)
 max_speed = 140.0
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1644109525 node_paths=PackedStringArray("target")]
-position = Vector2(179, 89)
-script = ExtResource("5_10c2w")
-target = NodePath("../Ship")
-
 [node name="Portal" type="Node2D" parent="." unique_id=1472483524]
 position = Vector2(534, 69)
 script = ExtResource("6_pg2xm")
@@ -290,27 +239,61 @@ texture = ExtResource("7_gc57s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Area2D" unique_id=46700549]
 shape = SubResource("CircleShape2D_i0uuj")
 
-[node name="RocketStand" type="StaticBody2D" parent="." unique_id=511286160]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1644109525 node_paths=PackedStringArray("target")]
+position = Vector2(179, 89)
+script = ExtResource("5_10c2w")
+target = NodePath("../Ship")
+
+[node name="LevelObjects" type="Node2D" parent="." unique_id=925880861]
+
+[node name="Turret" type="Node2D" parent="LevelObjects" unique_id=1323040125]
+position = Vector2(187, 55)
+
+[node name="Eye" parent="LevelObjects/Turret" unique_id=470195427 instance=ExtResource("17_uyinl")]
+position = Vector2(-7, 4)
+
+[node name="Gun" parent="LevelObjects/Turret" unique_id=1534434290 node_paths=PackedStringArray("engine") instance=ExtResource("18_uyinl")]
+position = Vector2(-4, 4)
+always_firing = false
+engine = NodePath("../Engine")
+
+[node name="Engine" parent="LevelObjects/Turret" unique_id=116914904 instance=ExtResource("14_3xj4h")]
+position = Vector2(-7, 9)
+rotation = 1.5707964
+
+[node name="Barrels" type="Node2D" parent="LevelObjects" unique_id=1657028627]
+
+[node name="Barrel2" parent="LevelObjects/Barrels" unique_id=353102213 instance=ExtResource("3_5v6r0")]
+position = Vector2(329, 9)
+
+[node name="Barrel" parent="LevelObjects/Barrels" unique_id=727086911 instance=ExtResource("3_5v6r0")]
+position = Vector2(306, 89)
+
+[node name="Barrel3" parent="LevelObjects/Barrels" unique_id=1617608536 instance=ExtResource("3_5v6r0")]
+position = Vector2(483, 177)
+
+[node name="Barrel5" parent="LevelObjects/Barrels" unique_id=1612058924 instance=ExtResource("3_5v6r0")]
+position = Vector2(152, 170)
+
+[node name="Barrel4" parent="LevelObjects/Barrels" unique_id=231001972 instance=ExtResource("3_5v6r0")]
+position = Vector2(601, 113)
+
+[node name="BouncePad" parent="LevelObjects" unique_id=214459495 instance=ExtResource("14_uyinl")]
+position = Vector2(151, 147)
+
+[node name="RocketStand" parent="LevelObjects" unique_id=43085775 instance=ExtResource("7_5v6r0")]
 position = Vector2(73, 152)
-collision_layer = 33
-collision_mask = 0
 
-[node name="RocketStand" type="Sprite2D" parent="RocketStand" unique_id=2102054591]
-texture = ExtResource("8_8b66f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketStand" unique_id=1281632680]
-position = Vector2(-3, 12.5)
-shape = SubResource("RectangleShape2D_i0uuj")
-
-[node name="Door" type="CharacterBody2D" parent="." unique_id=695896159 node_paths=PackedStringArray("forces")]
-position = Vector2(143, 63)
+[node name="Door" type="CharacterBody2D" parent="LevelObjects" unique_id=695896159 node_paths=PackedStringArray("forces")]
+position = Vector2(-8, -226)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("9_3jaai")
 forces = [NodePath("Rocket")]
+metadata/_edit_group_ = true
 
-[node name="NinePatchSprite2D" type="Sprite2D" parent="Door" unique_id=124892756]
-material = SubResource("ShaderMaterial_uyinl")
+[node name="NinePatchSprite2D" type="Sprite2D" parent="LevelObjects/Door" unique_id=124892756]
+material = SubResource("ShaderMaterial_5v6r0")
 position = Vector2(7.999996, 40)
 scale = Vector2(0.75000036, 6)
 texture = ExtResource("11_4vuph")
@@ -322,68 +305,30 @@ patch_right = 4.0
 patch_bottom = 4.0
 metadata/_custom_type_script = "uid://ug8dbn5sbe3u"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=1541438161]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelObjects/Door" unique_id=1541438161]
 position = Vector2(8, 42)
 shape = SubResource("RectangleShape2D_nlb7l")
 
-[node name="Engine" parent="Door" unique_id=1898465837 instance=ExtResource("14_3xj4h")]
+[node name="Engine" parent="LevelObjects/Door" unique_id=1898465837 instance=ExtResource("14_3xj4h")]
 position = Vector2(8, 96)
 rotation = 1.5707964
 start_fuel = 0
 suck_speed = 3000.0
 
-[node name="Rocket" parent="Door" unique_id=1185440983 node_paths=PackedStringArray("engine") instance=ExtResource("14_5v6r0")]
+[node name="Rocket" parent="LevelObjects/Door" unique_id=1185440983 node_paths=PackedStringArray("engine") instance=ExtResource("14_5v6r0")]
 position = Vector2(8, 91)
 rotation = -1.5707964
 always_on = true
 engine = NodePath("../Engine")
 
-[node name="BouncePad" type="Area2D" parent="." unique_id=615051490]
-position = Vector2(184, 187)
-rotation = -1.5707964
-collision_layer = 0
-collision_mask = 3
-script = ExtResource("14_fty5b")
+[node name="Wheel" type="Node2D" parent="." unique_id=1565780558]
+position = Vector2(114, 114)
+script = ExtResource("18_pg2xm")
+continuous = false
+discrete = true
+discrete_step_wait = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BouncePad" unique_id=157766216]
-shape = SubResource("RectangleShape2D_p8ruo")
+[node name="Sprite2D" type="Sprite2D" parent="Wheel" unique_id=1103230910]
+texture = ExtResource("18_10c2w")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BouncePad" unique_id=951411138]
-sprite_frames = SubResource("SpriteFrames_i0uuj")
-animation = &"idle"
-
-[node name="Barrels" type="Node2D" parent="." unique_id=1657028627]
-
-[node name="Barrel2" parent="Barrels" unique_id=353102213 instance=ExtResource("3_5v6r0")]
-position = Vector2(329, 9)
-
-[node name="Barrel" parent="Barrels" unique_id=727086911 instance=ExtResource("3_5v6r0")]
-position = Vector2(306, 89)
-
-[node name="Barrel3" parent="Barrels" unique_id=1617608536 instance=ExtResource("3_5v6r0")]
-position = Vector2(483, 177)
-
-[node name="Barrel5" parent="Barrels" unique_id=1612058924 instance=ExtResource("3_5v6r0")]
-position = Vector2(152, 170)
-
-[node name="Barrel4" parent="Barrels" unique_id=231001972 instance=ExtResource("3_5v6r0")]
-position = Vector2(601, 113)
-
-[node name="Turret" type="Node2D" parent="." unique_id=1323040125]
-position = Vector2(187, 55)
-
-[node name="Eye" parent="Turret" unique_id=470195427 instance=ExtResource("17_uyinl")]
-position = Vector2(-7, 4)
-
-[node name="Gun" parent="Turret" unique_id=1534434290 node_paths=PackedStringArray("engine") instance=ExtResource("18_uyinl")]
-position = Vector2(-4, 4)
-always_firing = false
-engine = NodePath("../Engine")
-
-[node name="Engine" parent="Turret" unique_id=116914904 instance=ExtResource("14_3xj4h")]
-position = Vector2(-7, 9)
-rotation = 1.5707964
-
-[node name="Chain" type="Node" parent="Turret" unique_id=2028488760]
-
-[connection signal="triggered" from="Turret/Eye" to="Turret/Gun" method="shoot_burst"]
+[connection signal="triggered" from="LevelObjects/Turret/Eye" to="LevelObjects/Turret/Gun" method="shoot_burst"]
