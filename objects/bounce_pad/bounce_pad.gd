@@ -1,11 +1,10 @@
-extends Area2D
+extends StaticBody2D
 @onready var sprite = $AnimatedSprite2D
-@export var push_speed:int = 1000;
+@onready var body_detector = $BodyDetector
+
 func _ready():
-	body_entered.connect(_on_body_entered)
-	
+	body_detector.body_entered.connect(_on_body_entered)
 func _on_body_entered(body:Node2D):
 	if body is SimpleBody:
-		var direction = Vector2.from_angle(rotation).normalized() * push_speed;
-		body.velocity += direction;
 		sprite.play("bounce")
+	

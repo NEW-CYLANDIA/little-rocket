@@ -14,6 +14,11 @@ func _ready():
 func _process(_delta):
 	fuel_exhaust_timer.paused = not on;
 	
+func turn_on():
+	on = true;
+func turn_off():
+	on = false;
+	
 func get_velocity():
 	if engine.fuel_stored > 0 and on:
 		var adjusted_accel = accel / (1.0/60.0)

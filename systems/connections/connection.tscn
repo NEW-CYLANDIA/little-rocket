@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b6xkl63nhqw78"]
+
+[ext_resource type="Texture2D" uid="uid://din2p30dykflq" path="res://systems/connections/connection_line_off.png" id="1_c5wa0"]
+[ext_resource type="Script" uid="uid://1tnphou8qjsy" path="res://systems/connections/connection.gd" id="2_2id6r"]
+[ext_resource type="Texture2D" uid="uid://bt76h8s52gkq3" path="res://systems/connections/connection_line_on.png" id="3_7u0qv"]
+
+[node name="Connection" type="Line2D" unique_id=1976730027]
+z_index = -5
+texture_repeat = 2
+points = PackedVector2Array(1, 3, -56.000004, -87.99999)
+width = 4.0
+texture_mode = 1
+script = ExtResource("2_2id6r")
+off_tex = ExtResource("1_c5wa0")
+on_tex = ExtResource("3_7u0qv")
+
+[node name="Timer" type="Timer" parent="." unique_id=417736868]
+wait_time = 0.2
+one_shot = true

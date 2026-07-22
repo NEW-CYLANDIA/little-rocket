@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dyxrm8ma8wxfi"]
+
+[ext_resource type="PackedScene" uid="uid://bsknh3cairn2e" path="res://objects/barrel/barrel.tscn" id="1_68l66"]
+[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="2_i85ce"]
+[ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="3_hr1o7"]
+[ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="4_hr1o7"]
+[ext_resource type="PackedScene" uid="uid://dh3nmvfkc07rp" path="res://objects/conveyor/conveyor_belt.tscn" id="5_gqs0k"]
+[ext_resource type="PackedScene" uid="uid://ca8psg28bb0im" path="res://objects/conveyor/conveyor.tscn" id="6_2ii3s"]
+[ext_resource type="PackedScene" uid="uid://cq8xift578u5g" path="res://objects/laser/laser.tscn" id="7_2ii3s"]
+[ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="8_26vcq"]
+[ext_resource type="PackedScene" uid="uid://bqvwewc084u0o" path="res://objects/turret/turret.tscn" id="9_o8sqp"]
+
+[node name="Palette" type="Node2D" unique_id=2111180389]
+
+[node name="Barrel" parent="." unique_id=236329877 instance=ExtResource("1_68l66")]
+
+[node name="BouncePad" parent="." unique_id=1025345947 instance=ExtResource("2_i85ce")]
+position = Vector2(0, 16)
+
+[node name="Block" parent="." unique_id=1651556813 instance=ExtResource("3_hr1o7")]
+position = Vector2(0, 40)
+
+[node name="Cannon" parent="." unique_id=1532791281 instance=ExtResource("4_hr1o7")]
+position = Vector2(0, 64)
+
+[node name="ConveyorBelt" parent="." unique_id=144110766 instance=ExtResource("5_gqs0k")]
+position = Vector2(0, 88)
+
+[node name="Conveyor" parent="ConveyorBelt" unique_id=1405930549 instance=ExtResource("6_2ii3s")]
+
+[node name="Laser" parent="." unique_id=2039897366 instance=ExtResource("7_2ii3s")]
+position = Vector2(-8, 112)
+points = PackedVector2Array(-8, 0, 24, 0)
+
+[node name="Switch" parent="." unique_id=947060351 instance=ExtResource("8_26vcq")]
+position = Vector2(0, 128)
+
+[node name="Turret" parent="." unique_id=715076560 instance=ExtResource("9_o8sqp")]
+position = Vector2(8, 136)

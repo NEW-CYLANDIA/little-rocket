@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dpv0n7mwxk2jh"]
+
+[ext_resource type="Texture2D" uid="uid://cdivjgb3w0otw" path="res://objects/box/box.png" id="1_xv1ks"]
+[ext_resource type="Script" uid="uid://gh5k4kryignw" path="res://objects/box/box.gd" id="2_0mufa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0uuj"]
+texture = ExtResource("1_xv1ks")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
+resource_local_to_scene = true
+size = Vector2(16, 16)
+
+[node name="Box" type="RigidBody2D" unique_id=1651556813]
+collision_layer = 2
+collision_mask = 2
+lock_rotation = true
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("2_0mufa")
+max_speed = 200.0
+metadata/_edit_group_ = true
+
+[node name="Box" type="Panel" parent="." unique_id=134391213]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_i0uuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=340337157]
+shape = SubResource("RectangleShape2D_nlb7l")

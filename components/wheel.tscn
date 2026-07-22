@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bqkln7v3kbca2"]
+
+[ext_resource type="Script" uid="uid://dp0k111g3g3g6" path="res://components/wheel/wheel.gd" id="1_53pcl"]
+[ext_resource type="Texture2D" uid="uid://dgk48b220fhru" path="res://components/wheel/wheel.png" id="2_jjl6t"]
+
+[node name="Wheel" type="Node2D" unique_id=260244531]
+script = ExtResource("1_53pcl")
+continuous_speed = 90.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=955582449]
+texture = ExtResource("2_jjl6t")

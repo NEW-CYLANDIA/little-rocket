@@ -1,0 +1,156 @@
+[gd_scene format=4 uid="uid://yn5r6iaxkovl"]
+
+[ext_resource type="Script" uid="uid://ck7qacenjy2l0" path="res://scenes/levels/level.gd" id="1_ouxo3"]
+[ext_resource type="TileSet" uid="uid://2t3bdo3y36y7" path="res://environment/tileset.tres" id="2_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://b3nx8gjqmfo7a" path="res://objects/ship/ship.tscn" id="3_rmjfq"]
+[ext_resource type="PackedScene" uid="uid://bp3cax5ntyc57" path="res://objects/rocket_stand/rocket_stand.tscn" id="4_7pb6i"]
+[ext_resource type="Script" uid="uid://c2wxewxyti7q6" path="res://systems/camera_2d.gd" id="5_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://ct2flge4ga683" path="res://objects/portal/portal.tscn" id="6_qogh7"]
+[ext_resource type="Script" uid="uid://ck602afteoar2" path="res://systems/connections/connections.gd" id="7_8iyoh"]
+[ext_resource type="PackedScene" uid="uid://b6xkl63nhqw78" path="res://systems/connections/connection.tscn" id="8_mq31s"]
+[ext_resource type="Script" uid="uid://hml3dq2f374x" path="res://environment/death_zone.gd" id="9_icy5c"]
+[ext_resource type="Script" uid="uid://7jn88ipjs37b" path="res://components/timer/timer_component.gd" id="10_8iyoh"]
+[ext_resource type="PackedScene" uid="uid://bsknh3cairn2e" path="res://objects/barrel/barrel.tscn" id="10_qhnmj"]
+[ext_resource type="Texture2D" uid="uid://guwca50bf6b3" path="res://components/timer/timer.png" id="10_qogh7"]
+[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="11_jyre1"]
+[ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="13_4ab0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qogh7"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iyoh"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq31s"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mi6g"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8j7q"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhnmj"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyre1"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(60, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp2ca"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(70, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ab0e"]
+atlas = ExtResource("10_qogh7")
+region = Rect2(80, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfk5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qogh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iyoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq31s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mi6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8j7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhnmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyre1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp2ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ab0e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
+size = Vector2(1866, 554)
+
+[node name="Level" type="Node2D" unique_id=2144015312]
+script = ExtResource("1_ouxo3")
+
+[node name="Level" type="TileMapLayer" parent="." unique_id=1468971203]
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAADG/xoAAAAAAAAAAADH/xoAAAAAAAAAAADI/xoAAAAAAAAAAADJ/xoAAAAAAAAAAADK/xoAAAAAAAAAAADL/xoAAAAAAAAAAADM/xoAAAAAAAAAAADN/xoAAAAAAAAAAADO/xoAAAAAAAAAAAA=")
+tile_set = ExtResource("2_ouxo3")
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=2046660635]
+position = Vector2(-232, 0)
+
+[node name="Ship" parent="PlayerSpawn" unique_id=907624824 instance=ExtResource("3_rmjfq")]
+position = Vector2(-304, 196)
+collision_layer = 1
+gravity_scale = 1.0
+
+[node name="RocketStand" parent="PlayerSpawn" unique_id=43085775 instance=ExtResource("4_7pb6i")]
+position = Vector2(-301, 192)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSpawn" unique_id=1644109525 node_paths=PackedStringArray("target")]
+position = Vector2(-224, 176)
+script = ExtResource("5_ouxo3")
+target = NodePath("../Ship")
+
+[node name="Portal" parent="." unique_id=1272979912 instance=ExtResource("6_qogh7")]
+position = Vector2(688, 64)
+
+[node name="LevelObjects" type="Node2D" parent="." unique_id=925880861]
+
+[node name="BouncePad2" parent="LevelObjects" unique_id=779719210 instance=ExtResource("11_jyre1")]
+position = Vector2(-496, 200)
+
+[node name="BouncePad4" parent="LevelObjects" unique_id=1794560593 instance=ExtResource("11_jyre1")]
+position = Vector2(-464, 200)
+
+[node name="Cannon2" parent="LevelObjects" unique_id=2087810045 instance=ExtResource("13_4ab0e")]
+position = Vector2(-408, 192)
+cannonball = ExtResource("10_qhnmj")
+
+[node name="Timer" type="Node2D" parent="LevelObjects" unique_id=2082237020]
+position = Vector2(-408, 216)
+script = ExtResource("10_8iyoh")
+
+[node name="Timer" type="Timer" parent="LevelObjects/Timer" unique_id=657556556]
+wait_time = 3.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LevelObjects/Timer" unique_id=1616924176]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_xfk5q")
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=75708491]
+position = Vector2(-1368, 336)
+script = ExtResource("9_icy5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1521116813]
+position = Vector2(923, 267)
+shape = SubResource("RectangleShape2D_nlb7l")
+
+[node name="Connections" type="Node2D" parent="." unique_id=1074965117]
+script = ExtResource("7_8iyoh")
+connection_scene = ExtResource("8_mq31s")
+
+[connection signal="ship_entered" from="Portal" to="." method="_on_portal_ship_entered"]
+[connection signal="timeout" from="LevelObjects/Timer/Timer" to="LevelObjects/Cannon2" method="fire"]

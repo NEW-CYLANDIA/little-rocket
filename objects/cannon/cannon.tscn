@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://jp280qwp77vy"]
+
+[ext_resource type="Script" uid="uid://4qxrb07gjdck" path="res://objects/cannon/cannon.gd" id="1_67o6l"]
+[ext_resource type="Texture2D" uid="uid://bojhwemo7ruyc" path="res://objects/cannon/cannon-sheet.png" id="2_nydaa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxfo"]
+atlas = ExtResource("2_nydaa")
+region = Rect2(0, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftsea"]
+atlas = ExtResource("2_nydaa")
+region = Rect2(20, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otnwt"]
+atlas = ExtResource("2_nydaa")
+region = Rect2(40, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xj4h"]
+atlas = ExtResource("2_nydaa")
+region = Rect2(60, 0, 20, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v6r0"]
+atlas = ExtResource("2_nydaa")
+region = Rect2(0, 0, 20, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kp23o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vaxfo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftsea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otnwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xj4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v6r0")
+}],
+"loop": 0,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
+size = Vector2(20, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
+size = Vector2(8, 2)
+
+[node name="Cannon" type="RigidBody2D" unique_id=1532791281 groups=["triggerable"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_67o6l")
+shoot_power = 300.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2024233171]
+sprite_frames = SubResource("SpriteFrames_kp23o")
+animation = &"shoot"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738216989]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_i0uuj")
+
+[node name="Input" type="Area2D" parent="." unique_id=127193724]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Input" unique_id=1811047275]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_nlb7l")

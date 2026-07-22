@@ -12,7 +12,8 @@ func _physics_process(delta):
 		registered_inputs.sort_custom(func(a:Node2D, b:Node2D): 
 			return global_position.distance_to(a.global_position) < global_position.distance_to(b.global_position))
 		var desired_input = registered_inputs[0]
-		velocity += (desired_input.global_position - global_position).normalized() * desired_input.suck_speed * delta;
+		if is_instance_valid(desired_input):
+			velocity += (desired_input.global_position - global_position).normalized() * desired_input.suck_speed * delta;
 	velocity *= friction
 	position += velocity * delta;
 
