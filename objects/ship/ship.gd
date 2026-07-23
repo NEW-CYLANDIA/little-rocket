@@ -26,6 +26,7 @@ var wasd_direction = Vector2.UP;
 
 func _physics_process(delta):
 	if not alive: return;
+	print(linear_velocity)
 	var direction:Vector2 = Vector2.ZERO;
 	match control_mode:
 		ControlMode.MOUSE:
@@ -35,7 +36,7 @@ func _physics_process(delta):
 			if started: wasd_direction = Input.get_vector("left", "right", "up", "down")
 			direction = wasd_direction
 	
-	rocket.on = Input.is_action_pressed("gas");
+	rocket.on = Input.is_action_pressed("gas")
 	
 	if Input.is_action_just_pressed("fire"):
 		gun_timer.start();

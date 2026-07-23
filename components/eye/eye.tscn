@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://f8l44vpdoi3g" path="res://components/eye/eye.gd" id="1_uggby"]
 [ext_resource type="Texture2D" uid="uid://dgkqbr7tmnr64" path="res://components/eye/eye.png" id="2_t3eo3"]
 
-[node name="Eye" type="Node2D" unique_id=470195427]
+[node name="Eye" type="Node2D" unique_id=470195427 groups=["trigger"]]
 script = ExtResource("1_uggby")
 cooldown = 1.0
 

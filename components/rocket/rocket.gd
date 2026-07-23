@@ -5,7 +5,6 @@ var on:bool = false;
 var velocity:Vector2 = Vector2.ZERO;
 @export var engine:FuelEngine;
 @onready var fuel_exhaust_timer = $FuelExhaustTimer
-
 func _ready():
 	if always_on: on = true;
 	fuel_exhaust_timer.timeout.connect(func():

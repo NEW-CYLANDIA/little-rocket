@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dw6avfl8awuk4"]
+
+[ext_resource type="Script" uid="uid://7jn88ipjs37b" path="res://components/timer/timer_component.gd" id="1_ytbjh"]
+[ext_resource type="Texture2D" uid="uid://guwca50bf6b3" path="res://components/timer/timer.png" id="2_bddub"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qogh7"]
+atlas = ExtResource("2_bddub")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iyoh"]
+atlas = ExtResource("2_bddub")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq31s"]
+atlas = ExtResource("2_bddub")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mi6g"]
+atlas = ExtResource("2_bddub")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8j7q"]
+atlas = ExtResource("2_bddub")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhnmj"]
+atlas = ExtResource("2_bddub")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyre1"]
+atlas = ExtResource("2_bddub")
+region = Rect2(60, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp2ca"]
+atlas = ExtResource("2_bddub")
+region = Rect2(70, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ab0e"]
+atlas = ExtResource("2_bddub")
+region = Rect2(80, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfk5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qogh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iyoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq31s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mi6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8j7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhnmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyre1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp2ca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ab0e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Timer" type="Node2D" unique_id=2141239095 groups=["trigger"]]
+script = ExtResource("1_ytbjh")
+wait_time = 0.5
+
+[node name="Timer" type="Timer" parent="." unique_id=1762313926]
+wait_time = 3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1336793845]
+sprite_frames = SubResource("SpriteFrames_xfk5q")

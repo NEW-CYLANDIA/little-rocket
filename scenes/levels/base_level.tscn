@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://yn5r6iaxkovl"]
+
+[ext_resource type="Script" uid="uid://ck7qacenjy2l0" path="res://scenes/levels/level.gd" id="1_ouxo3"]
+[ext_resource type="TileSet" uid="uid://2t3bdo3y36y7" path="res://environment/tileset.tres" id="2_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://b3nx8gjqmfo7a" path="res://objects/ship/ship.tscn" id="3_rmjfq"]
+[ext_resource type="PackedScene" uid="uid://bp3cax5ntyc57" path="res://objects/rocket_stand/rocket_stand.tscn" id="4_7pb6i"]
+[ext_resource type="Script" uid="uid://c2wxewxyti7q6" path="res://systems/camera_2d.gd" id="5_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://ct2flge4ga683" path="res://objects/portal/portal.tscn" id="6_qogh7"]
+[ext_resource type="Script" uid="uid://ck602afteoar2" path="res://systems/connections/connections.gd" id="7_8iyoh"]
+[ext_resource type="PackedScene" uid="uid://b6xkl63nhqw78" path="res://systems/connections/connection.tscn" id="8_mq31s"]
+[ext_resource type="Script" uid="uid://hml3dq2f374x" path="res://environment/death_zone.gd" id="9_icy5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
+size = Vector2(1866, 554)
+
+[node name="Level" type="Node2D" unique_id=2144015312]
+script = ExtResource("1_ouxo3")
+
+[node name="Level" type="TileMapLayer" parent="." unique_id=1468971203]
+z_index = -50
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAAA=")
+tile_set = ExtResource("2_ouxo3")
+
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=2046660635]
+position = Vector2(-232, 0)
+
+[node name="Ship" parent="PlayerSpawn" unique_id=907624824 instance=ExtResource("3_rmjfq")]
+position = Vector2(-304, 196)
+gravity_scale = 1.0
+
+[node name="RocketStand" parent="PlayerSpawn" unique_id=43085775 instance=ExtResource("4_7pb6i")]
+position = Vector2(-301, 192)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSpawn" unique_id=1644109525 node_paths=PackedStringArray("target")]
+position = Vector2(-272, 192)
+script = ExtResource("5_ouxo3")
+target = NodePath("../Ship")
+
+[node name="Portal" parent="." unique_id=1272979912 instance=ExtResource("6_qogh7")]
+position = Vector2(688, 64)
+
+[node name="LevelObjects" type="Node2D" parent="." unique_id=925880861]
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=75708491]
+position = Vector2(-1368, 336)
+script = ExtResource("9_icy5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=1521116813]
+position = Vector2(923, 267)
+shape = SubResource("RectangleShape2D_nlb7l")
+
+[node name="Connections" type="Node2D" parent="." unique_id=1074965117]
+script = ExtResource("7_8iyoh")
+connection_scene = ExtResource("8_mq31s")
+
+[connection signal="ship_entered" from="Portal" to="." method="_on_portal_ship_entered"]

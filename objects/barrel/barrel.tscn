@@ -13,10 +13,10 @@ size = Vector2(14, 14)
 radius = 5.0
 height = 14.0
 
-[node name="Barrel" type="RigidBody2D" unique_id=236329877]
-collision_layer = 2
+[node name="Barrel" type="RigidBody2D" unique_id=236329877 groups=["barrel"]]
+collision_layer = 130
 collision_mask = 2
-mass = 0.001
+lock_rotation = true
 script = ExtResource("2_6iawg")
 
 [node name="Destructible" parent="." unique_id=1462746512 node_paths=PackedStringArray("flash") instance=ExtResource("2_kh7lf")]

@@ -84,8 +84,8 @@ size = Vector2(32, 8)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
 size = Vector2(32, 2)
 
-[node name="Conveyor" type="RigidBody2D" unique_id=1405930549]
-collision_layer = 2
+[node name="Conveyor" type="StaticBody2D" unique_id=1297743976]
+collision_layer = 130
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_10c2w")
 script = ExtResource("1_ywffn")
@@ -93,7 +93,6 @@ script = ExtResource("1_ywffn")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=959244806]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_5v6r0")
-autoplay = "default"
 frame = 7
 frame_progress = 0.17777437
 

@@ -4,4 +4,5 @@
 
 [node name="ConveyorBelt" type="Node2D" unique_id=144110766 groups=["triggerable"]]
 script = ExtResource("1_uymj0")
-speed = 0.1
+speed = 100.0
+start_on = true

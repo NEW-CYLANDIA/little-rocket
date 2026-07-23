@@ -55,9 +55,9 @@ animations = [{
 size = Vector2(20, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
-size = Vector2(8, 2)
+size = Vector2(24, 22)
 
-[node name="Cannon" type="RigidBody2D" unique_id=1532791281 groups=["triggerable"]]
+[node name="Cannon" type="StaticBody2D" unique_id=462408111 groups=["trigger", "triggerable"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_67o6l")
@@ -78,5 +78,9 @@ collision_layer = 0
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Input" unique_id=1811047275]
-position = Vector2(0, -4)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_nlb7l")
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1046051036]
+wait_time = 0.5
+one_shot = true

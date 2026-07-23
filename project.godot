@@ -32,6 +32,8 @@ enabled=PackedStringArray()
 [global_group]
 
 triggerable=""
+trigger=""
+barrel=""
 
 [input]
 

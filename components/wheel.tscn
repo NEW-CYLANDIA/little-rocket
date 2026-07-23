@@ -8,4 +8,5 @@ script = ExtResource("1_53pcl")
 continuous_speed = 90.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=955582449]
+z_index = -10
 texture = ExtResource("2_jjl6t")

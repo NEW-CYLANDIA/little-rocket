@@ -11,7 +11,7 @@ func shoot_bullet():
 	var shoot_vec = Vector2.from_angle(global_rotation).normalized()
 	bullet.global_position = global_position + shoot_vec * 8
 	bullet.shoot(shoot_vec)
-	add_child(bullet);
+	get_parent().call_deferred("add_child", bullet);
 func shoot_burst(bullets:int = 3, time_between:float = 0.1):
 	for i in range(0, bullets):
 		shoot_bullet()

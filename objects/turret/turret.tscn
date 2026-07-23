@@ -6,9 +6,8 @@
 [node name="Turret" type="Node2D" unique_id=715076560]
 
 [node name="Eye" parent="." unique_id=470195427 instance=ExtResource("1_4qjal")]
-position = Vector2(-7, 4)
 
 [node name="Gun" parent="." unique_id=1534434290 instance=ExtResource("2_50gud")]
-position = Vector2(-4, 4)
+position = Vector2(3, 0)
 
 [connection signal="saw_player" from="Eye" to="Gun" method="shoot_burst" binds= [3]]

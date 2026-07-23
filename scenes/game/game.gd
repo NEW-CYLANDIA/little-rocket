@@ -7,7 +7,6 @@ var current_level:Level
 var level_index:int = 0;
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	print(level_override)
 	if level_override != null:
 		level_index = -1;
 		load_level(level_override)
@@ -18,7 +17,6 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 func load_level(level:PackedScene):
-	print("here")
 	if is_instance_valid(current_level): current_level.queue_free();
 	current_level = level.instantiate()
 	add_child(current_level);
