@@ -85,7 +85,7 @@ size = Vector2(32, 8)
 size = Vector2(32, 2)
 
 [node name="Conveyor" type="StaticBody2D" unique_id=1297743976]
-collision_layer = 130
+collision_layer = 2
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_10c2w")
 script = ExtResource("1_ywffn")
@@ -102,7 +102,7 @@ shape = SubResource("RectangleShape2D_i0uuj")
 
 [node name="Top" type="Area2D" parent="." unique_id=2061978999]
 collision_layer = 0
-collision_mask = 3
+collision_mask = 259
 script = ExtResource("2_ynhas")
 force = Vector2(1, 0)
 
@@ -113,7 +113,7 @@ shape = SubResource("RectangleShape2D_nlb7l")
 [node name="Bottom" type="Area2D" parent="." unique_id=1941796620]
 position = Vector2(0, 10)
 collision_layer = 0
-collision_mask = 3
+collision_mask = 259
 script = ExtResource("2_ynhas")
 force = Vector2(-1, 0)
 

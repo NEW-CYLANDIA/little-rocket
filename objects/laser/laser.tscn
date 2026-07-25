@@ -20,7 +20,7 @@ texture_mode = 1
 script = ExtResource("3_8f502")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=837137463]
-collision_layer = 128
+collision_layer = 64
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=424395629]

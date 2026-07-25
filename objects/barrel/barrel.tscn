@@ -14,8 +14,8 @@ radius = 5.0
 height = 14.0
 
 [node name="Barrel" type="RigidBody2D" unique_id=236329877 groups=["barrel"]]
-collision_layer = 130
-collision_mask = 2
+collision_layer = 2
+collision_mask = 258
 lock_rotation = true
 script = ExtResource("2_6iawg")
 

@@ -64,16 +64,18 @@ script = ExtResource("1_67o6l")
 shoot_power = 300.0
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2024233171]
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_kp23o")
 animation = &"shoot"
 frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738216989]
-position = Vector2(0, 6)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_i0uuj")
 
 [node name="Input" type="Area2D" parent="." unique_id=127193724]
+position = Vector2(0, 2)
 collision_layer = 0
 collision_mask = 3
 

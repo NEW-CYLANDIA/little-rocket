@@ -19,7 +19,7 @@ func _process(_delta):
 func load_level(level:PackedScene):
 	if is_instance_valid(current_level): current_level.queue_free();
 	current_level = level.instantiate()
-	add_child(current_level);
+	call_deferred("add_child", current_level);
 	current_level.completed.connect(_on_level_complete)
 	current_level.failed.connect(func(): load_level(level))
 func _on_level_complete():
