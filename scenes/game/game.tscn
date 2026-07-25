@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xh7vxm2l5rae"]
 
 [ext_resource type="Script" uid="uid://348oiqrw0ao1" path="res://scenes/game/game.gd" id="1_otnwt"]
-[ext_resource type="PackedScene" uid="uid://cmbpchu4iggo5" path="res://scenes/levels/test_level.tscn" id="2_7h61r"]
+[ext_resource type="PackedScene" uid="uid://cmbpchu4iggo5" path="res://scenes/levels/sandbox.tscn" id="2_0sr1o"]
 [ext_resource type="FontFile" uid="uid://b1gt1wqnvltp8" path="res://More 15.ttf" id="3_0sr1o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7h61r"]
@@ -10,7 +10,7 @@ font_size = 32
 
 [node name="Game" type="Node2D" unique_id=2144015312]
 script = ExtResource("1_otnwt")
-level_override = ExtResource("2_7h61r")
+level_override = ExtResource("2_0sr1o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368567300]
 

@@ -76,13 +76,12 @@ down={
 [layer_names]
 
 2d_physics/layer_1="Ship"
-2d_physics/layer_2="Level"
+2d_physics/layer_2="Solid"
 2d_physics/layer_3="Shootable"
 2d_physics/layer_4="Fuel"
 2d_physics/layer_5="Portal"
 2d_physics/layer_6="Launchpad"
 2d_physics/layer_7="Bullet"
-2d_physics/layer_8="Kill_Ship"
 
 [physics]
 

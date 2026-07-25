@@ -15,6 +15,7 @@ size = Vector2(1866, 554)
 
 [node name="Level" type="Node2D" unique_id=2144015312]
 script = ExtResource("1_ouxo3")
+test_mode = true
 
 [node name="Level" type="TileMapLayer" parent="." unique_id=1468971203]
 z_index = -50
