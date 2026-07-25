@@ -26,7 +26,6 @@ var wasd_direction = Vector2.UP;
 
 func _physics_process(delta):
 	if not alive: return;
-	print(linear_velocity)
 	var direction:Vector2 = Vector2.ZERO;
 	match control_mode:
 		ControlMode.MOUSE:
@@ -60,9 +59,11 @@ func die():
 	new_explosion.global_position = global_position
 	died.emit();
 
-func _on_collider_area_entered(_area):
-	die();
+func _on_collider_area_entered(area):
+	if not area is Bullet or not area.owned_by_ship:
+		die();
 
 
-func _on_collider_body_entered(_body):
-	die();
+func _on_collider_body_entered(body):
+	if not body is Bullet or not body.owned_by_ship:
+		die();

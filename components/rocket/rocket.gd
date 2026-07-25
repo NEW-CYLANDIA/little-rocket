@@ -5,6 +5,8 @@ var on:bool = false;
 var velocity:Vector2 = Vector2.ZERO;
 @export var engine:FuelEngine;
 @onready var fuel_exhaust_timer = $FuelExhaustTimer
+
+@export var debug_print:bool = false;
 func _ready():
 	if always_on: on = true;
 	fuel_exhaust_timer.timeout.connect(func():
@@ -21,5 +23,7 @@ func turn_off():
 func get_velocity():
 	if engine.fuel_stored > 0 and on:
 		var adjusted_accel = accel / (1.0/60.0)
-		return Vector2.RIGHT.rotated(global_rotation) * adjusted_accel;
+		var force = Vector2.RIGHT.rotated(global_rotation) * adjusted_accel;
+		if debug_print: print(force)
+		return force
 	return Vector2.ZERO;

@@ -1,5 +1,16 @@
 [gd_scene format=3 uid="uid://cmbpchu4iggo5"]
 
 [ext_resource type="PackedScene" uid="uid://yn5r6iaxkovl" path="res://scenes/levels/base_level.tscn" id="1_jbqir"]
+[ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="2_v45ci"]
+[ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="4_48ne7"]
 
 [node name="Level" unique_id=2144015312 instance=ExtResource("1_jbqir")]
+
+[node name="Switch" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="0" unique_id=947060351 instance=ExtResource("2_v45ci")]
+position = Vector2(-504, 200)
+rotation = 0.0
+
+[node name="Cannon" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=462408111 instance=ExtResource("4_48ne7")]
+position = Vector2(-480, 192)
+
+[connection signal="switched" from="LevelObjects/Switch" to="LevelObjects/Cannon" method="fire"]

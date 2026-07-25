@@ -6,6 +6,9 @@ extends RigidBody2D
 @export var max_speed:float = 120;
 
 var speed_locked:bool = true;
+func _ready():
+	for child in get_children():
+		if child is Force: forces.append(child);
 func _physics_process(_delta):
 	for force in forces:
 		apply_central_force(force.get_velocity())

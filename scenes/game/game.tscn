@@ -1,8 +1,41 @@
 [gd_scene format=3 uid="uid://xh7vxm2l5rae"]
 
 [ext_resource type="Script" uid="uid://348oiqrw0ao1" path="res://scenes/game/game.gd" id="1_otnwt"]
-[ext_resource type="PackedScene" uid="uid://yn5r6iaxkovl" path="res://scenes/levels/base_level.tscn" id="2_7h61r"]
+[ext_resource type="PackedScene" uid="uid://cmbpchu4iggo5" path="res://scenes/levels/test_level.tscn" id="2_7h61r"]
+[ext_resource type="FontFile" uid="uid://b1gt1wqnvltp8" path="res://More 15.ttf" id="3_0sr1o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7h61r"]
+font = ExtResource("3_0sr1o")
+font_size = 32
 
 [node name="Game" type="Node2D" unique_id=2144015312]
 script = ExtResource("1_otnwt")
 level_override = ExtResource("2_7h61r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368567300]
+
+[node name="LevelComplete" type="PanelContainer" parent="CanvasLayer" unique_id=34682992]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/LevelComplete" unique_id=329326173]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/LevelComplete/VBoxContainer" unique_id=526168959]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Level Complete!"
+label_settings = SubResource("LabelSettings_7h61r")
+
+[node name="RestartBtn" type="Button" parent="CanvasLayer/LevelComplete/VBoxContainer" unique_id=433983500]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_0sr1o")
+text = "Restart"
+
+[connection signal="pressed" from="CanvasLayer/LevelComplete/VBoxContainer/RestartBtn" to="." method="_on_restart_btn_pressed"]

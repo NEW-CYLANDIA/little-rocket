@@ -6,11 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
 size = Vector2(10, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
-size = Vector2(1, 6)
-
 [node name="Bullet" type="Area2D" unique_id=899602763]
-collision_layer = 64
+collision_layer = 192
 collision_mask = 6
 script = ExtResource("1_g08x3")
 speed = 250
@@ -20,11 +17,3 @@ texture = ExtResource("2_l2pgv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=231848961]
 shape = SubResource("RectangleShape2D_i0uuj")
-
-[node name="KillShip" type="Area2D" parent="." unique_id=1924042759]
-collision_layer = 128
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillShip" unique_id=1074535868]
-position = Vector2(3.5, 0)
-shape = SubResource("RectangleShape2D_nlb7l")
