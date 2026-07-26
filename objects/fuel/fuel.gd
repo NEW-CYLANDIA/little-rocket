@@ -4,7 +4,10 @@ class_name Fuel
 var velocity:Vector2;
 @export var friction = 0.9;
 
+
 var registered_inputs:Array[FuelInput]
+
+# TODO: sometimes these get stuck in nothingness when the player dies
 func _physics_process(delta):
 	# If we're detected by multiple inputs,
 	# only go towards closest one.

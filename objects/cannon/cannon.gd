@@ -9,6 +9,8 @@ var old_parent:Node
 @onready var cooldown:Timer = $Cooldown
 
 signal cannonball_entered();
+
+##TODO: Cannon teleports player
 func _ready():
 	input_area.body_entered.connect(on_body_entered_input)
 func fire():

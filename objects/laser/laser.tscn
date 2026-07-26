@@ -9,6 +9,7 @@ shader = ExtResource("1_ejt2u")
 shader_parameter/scroll_speed = 2.000000569999999
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_i0uuj"]
+resource_local_to_scene = true
 b = Vector2(32, 40)
 
 [node name="Laser" type="Line2D" unique_id=2039897366]

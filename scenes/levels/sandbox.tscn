@@ -49,7 +49,7 @@ position = Vector2(-601, 128)
 position = Vector2(-633, 112)
 wait_time = 1.0
 
-[node name="BouncePad" parent="." index="6" unique_id=1587595348 instance=ExtResource("9_uq7s3")]
+[node name="BouncePad2" parent="." index="6" unique_id=1587595348 instance=ExtResource("9_uq7s3")]
 position = Vector2(-496, 200)
 rotation = 4.712389
 

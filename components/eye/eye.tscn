@@ -11,11 +11,13 @@ cooldown = 1.0
 texture = ExtResource("2_t3eo3")
 
 [node name="LevelRaycast" type="RayCast2D" parent="." unique_id=1373657561]
+position = Vector2(3, 0)
 target_position = Vector2(109, 0)
 collision_mask = 2
 collide_with_areas = true
 
 [node name="DetectionRaycast" type="RayCast2D" parent="." unique_id=1940463068]
+position = Vector2(3, 0)
 target_position = Vector2(109, 0)
 collide_with_areas = true
 
