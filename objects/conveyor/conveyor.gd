@@ -17,6 +17,7 @@ func turn_off():
 func reverse():
 	top.force *= -1;
 	bottom.force *= -1;
-	sprite.speed_scale *= -1;
 	speed *= -1;
+func _process(_delta):
+	sprite.speed_scale = sign(speed)
 	

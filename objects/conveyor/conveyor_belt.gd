@@ -1,9 +1,12 @@
 # Just encompasses and sends signals to multiple conveyors
 extends Node2D
 var conveyors:Array[Conveyor]
+
 @export var speed:float = 0.5;
 @export var start_on:bool = false;
+
 func _ready():
+	
 	for child in get_children():
 		var conveyor = child as Conveyor
 		conveyor.speed = speed;

@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://p5cbv5l1aw22" path="res://objects/bounce_pad/bounce_pad.gd" id="1_dkqsl"]
 [ext_resource type="Texture2D" uid="uid://c3b1vtxh7av05" path="res://objects/bounce_pad/bounce_pad-sheet.png" id="2_mbw55"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ruo"]
-size = Vector2(6, 12)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rvswv"]
 atlas = ExtResource("2_mbw55")
 region = Rect2(10, 0, 10, 12)
@@ -47,17 +44,34 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BouncePad" type="Area2D" unique_id=1587595348]
-rotation = -1.5707964
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
+size = Vector2(12, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ruo"]
+size = Vector2(12, 2)
+
+[node name="BouncePad" type="StaticBody2D" unique_id=1247794687]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 0
 script = ExtResource("1_dkqsl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=399996638]
-position = Vector2(-5, 0)
-shape = SubResource("RectangleShape2D_p8ruo")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=915843431]
-position = Vector2(-3.0000005, 0)
+position = Vector2(1.3113419e-07, 3.0000005)
+rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_i0uuj")
 animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1806864524]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_i0uuj")
+
+[node name="BouncePad" type="Area2D" parent="." unique_id=1587595348]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BouncePad" unique_id=399996638]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_p8ruo")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=276982491]
+target_position = Vector2(-2.1855694e-06, -50)

@@ -9,6 +9,7 @@ var old_parent:Node
 @onready var cooldown:Timer = $Cooldown
 
 signal cannonball_entered();
+
 func _ready():
 	input_area.body_entered.connect(on_body_entered_input)
 func fire():
@@ -17,7 +18,7 @@ func fire():
 	if cannonball_override: 
 		new_cannonball = cannonball_override
 		cannonball_override = null
-		old_parent.call_deferred("add_child", new_cannonball)
+		old_parent.add_child(new_cannonball)
 	else:
 		if cannonball:
 			new_cannonball = cannonball.instantiate() as SimpleBody

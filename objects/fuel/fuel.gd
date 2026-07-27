@@ -4,7 +4,9 @@ class_name Fuel
 var velocity:Vector2;
 @export var friction = 0.9;
 
+
 var registered_inputs:Array[FuelInput]
+
 func _physics_process(delta):
 	# If we're detected by multiple inputs,
 	# only go towards closest one.
@@ -14,9 +16,10 @@ func _physics_process(delta):
 		var desired_input = registered_inputs[0]
 		if is_instance_valid(desired_input):
 			velocity += (desired_input.global_position - global_position).normalized() * desired_input.suck_speed * delta;
+	else: visible = false;
 	velocity *= friction
 	position += velocity * delta;
-
+	
 func register_input(fuel_input:FuelInput):
 	registered_inputs.append(fuel_input);
 func launch(vec:Vector2):

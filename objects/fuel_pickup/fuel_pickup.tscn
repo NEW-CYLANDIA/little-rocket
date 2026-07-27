@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://qnfaxs6tnuct"]
+
+[ext_resource type="Script" uid="uid://c7i370uobc8oo" path="res://objects/fuel_pickup/fuel_pickup.gd" id="1_jxrka"]
+[ext_resource type="Texture2D" uid="uid://bm6q5ow1ye8q6" path="res://objects/fuel_pickup/fuel_pickup.png" id="2_4ewgu"]
+[ext_resource type="PackedScene" uid="uid://m05cuvw7cgrr" path="res://components/fuel_output/fuel_output.tscn" id="3_a6faq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0uuj"]
+radius = 11.045361
+
+[node name="FuelCollectible" type="Area2D" unique_id=1281885659]
+collision_layer = 0
+script = ExtResource("1_jxrka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=615683161]
+shape = SubResource("CircleShape2D_i0uuj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711214823]
+texture = ExtResource("2_4ewgu")
+
+[node name="FuelOutput" parent="." unique_id=878605252 instance=ExtResource("3_a6faq")]
