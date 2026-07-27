@@ -10,7 +10,6 @@ var old_parent:Node
 
 signal cannonball_entered();
 
-##TODO: Cannon teleports player
 func _ready():
 	input_area.body_entered.connect(on_body_entered_input)
 func fire():
@@ -19,7 +18,7 @@ func fire():
 	if cannonball_override: 
 		new_cannonball = cannonball_override
 		cannonball_override = null
-		old_parent.call_deferred("add_child", new_cannonball)
+		old_parent.add_child(new_cannonball)
 	else:
 		if cannonball:
 			new_cannonball = cannonball.instantiate() as SimpleBody

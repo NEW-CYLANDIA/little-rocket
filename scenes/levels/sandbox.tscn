@@ -8,24 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://ca8psg28bb0im" path="res://objects/conveyor/conveyor.tscn" id="5_qm7gn"]
 [ext_resource type="PackedScene" uid="uid://cq8xift578u5g" path="res://objects/laser/laser.tscn" id="6_qm7gn"]
 [ext_resource type="PackedScene" uid="uid://dw6avfl8awuk4" path="res://components/timer/timer.tscn" id="8_harsw"]
+[ext_resource type="Script" uid="uid://1rpg45rcorat" path="res://systems/toggle_group.gd" id="9_swuqm"]
 [ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="9_uq7s3"]
 [ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="10_fer5g"]
+[ext_resource type="PackedScene" uid="uid://qnfaxs6tnuct" path="res://objects/fuel_pickup/fuel_pickup.tscn" id="10_w3ud1"]
 
 [node name="Level" unique_id=2144015312 instance=ExtResource("1_xf1sy")]
 
 [node name="Level" parent="." index="0" unique_id=1468971203]
 tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAAC1/xYAAAAAAAAAAAC0/xYAAAAAAAAAAACz/xYAAAAAAAAAAACy/xYAAAAAAAAAAACx/xYAAAAAAAAAAACw/xYAAAAAAAAAAAC1/w4AAAAAAAAAAAC0/w4AAAAAAAAAAACz/w4AAAAAAAAAAACy/w4AAAAAAAAAAACx/w4AAAAAAAAAAACw/w4AAAAAAAAAAACv/xYAAAAAAAAAAACu/xYAAAAAAAAAAACt/xYAAAAAAAAAAACs/xYAAAAAAAAAAACv/w4AAAAAAAAAAACu/w4AAAAAAAAAAACt/w4AAAAAAAAAAACs/w4AAAAAAAAAAACr/w4AAAAAAAAAAACq/w4AAAAAAAAAAACr/xYAAAAAAAAAAACq/xYAAAAAAAAAAAA=")
 
-[node name="Cannon2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="0" unique_id=462408111 instance=ExtResource("3_b4sxl")]
-position = Vector2(-633, 136)
-rotation = 3.1415925
-cannonball = ExtResource("3_ea3gy")
-
-[node name="Cannon3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=1600842839 instance=ExtResource("3_b4sxl")]
+[node name="Cannon3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="0" unique_id=1600842839 instance=ExtResource("3_b4sxl")]
 position = Vector2(-704.0001, 168.00006)
 rotation = 5.759587
 
-[node name="ConveyorBelt" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="2" unique_id=144110766 instance=ExtResource("4_b4sxl")]
+[node name="ConveyorBelt" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=144110766 instance=ExtResource("4_b4sxl")]
 position = Vector2(-625, 168)
 speed = -100.0
 
@@ -38,24 +35,49 @@ position = Vector2(16, 0)
 [node name="Conveyor3" parent="LevelObjects/ConveyorBelt" index="2" unique_id=1823889921 instance=ExtResource("5_qm7gn")]
 position = Vector2(-48, 0)
 
-[node name="Laser" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="3" unique_id=2039897366 instance=ExtResource("6_qm7gn")]
-position = Vector2(-617, 136)
-points = PackedVector2Array(0, -16, 0, 32)
+[node name="Switch2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="2" unique_id=1794953446 instance=ExtResource("2_a64th")]
+position = Vector2(-536, 144)
 
-[node name="Switch2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="4" unique_id=1794953446 instance=ExtResource("2_a64th")]
-position = Vector2(-601, 128)
-
-[node name="Timer" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="5" unique_id=2141239095 instance=ExtResource("8_harsw")]
+[node name="Timer" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="3" unique_id=2141239095 instance=ExtResource("8_harsw")]
 position = Vector2(-633, 112)
 wait_time = 1.0
 
-[node name="BouncePad2" parent="." index="6" unique_id=1587595348 instance=ExtResource("9_uq7s3")]
-position = Vector2(-496, 200)
-rotation = 4.712389
+[node name="Barrel" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="4" unique_id=236329877 instance=ExtResource("3_ea3gy")]
+position = Vector2(-464, 200)
 
-[node name="Box" parent="." index="7" unique_id=1651556813 instance=ExtResource("10_fer5g")]
-position = Vector2(-496, 136)
+[node name="ToggleGroup" type="Node2D" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="5" unique_id=164948575]
+position = Vector2(136, 40)
+script = ExtResource("9_swuqm")
+
+[node name="Laser" parent="LevelObjects/ToggleGroup" index="0" unique_id=2039897366 instance=ExtResource("6_qm7gn")]
+position = Vector2(-617, 136)
+points = PackedVector2Array(0, -16, 0, 32)
+
+[node name="Laser2" parent="LevelObjects/ToggleGroup" index="1" unique_id=242119985 instance=ExtResource("6_qm7gn")]
+position = Vector2(-648, 136)
+points = PackedVector2Array(32, -16, 0, 32)
+
+[node name="FuelCollectible" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="6" unique_id=1281885659 instance=ExtResource("10_w3ud1")]
+position = Vector2(-600, 232)
+
+[node name="FuelCollectible2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="7" unique_id=2075575851 instance=ExtResource("10_w3ud1")]
+position = Vector2(-640, 248)
+
+[node name="FuelCollectible3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="8" unique_id=1927124927 instance=ExtResource("10_w3ud1")]
+position = Vector2(-688, 232)
+
+[node name="StaticBody2D" parent="." index="6" unique_id=1247794687 instance=ExtResource("9_uq7s3")]
+position = Vector2(-496, 152)
+
+[node name="StaticBody2D3" parent="." index="7" unique_id=1369045668 instance=ExtResource("9_uq7s3")]
+position = Vector2(-464, 152)
+
+[node name="Box" parent="." index="8" unique_id=1651556813 instance=ExtResource("10_fer5g")]
+position = Vector2(-496, 120)
+
+[node name="Box2" parent="." index="9" unique_id=841220816 instance=ExtResource("10_fer5g")]
+position = Vector2(-464, 120)
 
 [connection signal="cannonball_entered" from="LevelObjects/Cannon3" to="LevelObjects/Cannon3" method="fire"]
 [connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ConveyorBelt" method="reverse"]
-[connection signal="timeout" from="LevelObjects/Timer" to="LevelObjects/Cannon2" method="fire"]
+[connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ToggleGroup" method="toggle"]

@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://ck602afteoar2" path="res://systems/connections/connections.gd" id="7_8iyoh"]
 [ext_resource type="PackedScene" uid="uid://b6xkl63nhqw78" path="res://systems/connections/connection.tscn" id="8_mq31s"]
 [ext_resource type="Script" uid="uid://hml3dq2f374x" path="res://environment/death_zone.gd" id="9_icy5c"]
-[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="10_j7gcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
 size = Vector2(1866, 554)
@@ -55,8 +54,5 @@ shape = SubResource("RectangleShape2D_nlb7l")
 [node name="Connections" type="Node2D" parent="." unique_id=1074965117]
 script = ExtResource("7_8iyoh")
 connection_scene = ExtResource("8_mq31s")
-
-[node name="BouncePad" parent="." unique_id=1587595348 instance=ExtResource("10_j7gcg")]
-position = Vector2(-480, 200)
 
 [connection signal="ship_entered" from="Portal" to="." method="_on_portal_ship_entered"]

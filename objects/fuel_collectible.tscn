@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://qnfaxs6tnuct"]
-
-[ext_resource type="Script" uid="uid://c7i370uobc8oo" path="res://objects/fuel_collectible.gd" id="1_objoq"]
-
-[node name="FuelCollectible" type="Node2D" unique_id=1529260387]
-script = ExtResource("1_objoq")

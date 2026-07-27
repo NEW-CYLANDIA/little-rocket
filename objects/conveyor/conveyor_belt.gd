@@ -5,7 +5,6 @@ var conveyors:Array[Conveyor]
 @export var speed:float = 0.5;
 @export var start_on:bool = false;
 
-##TODO: Set sprite anim to match speed
 func _ready():
 	
 	for child in get_children():
