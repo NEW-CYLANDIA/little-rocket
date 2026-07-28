@@ -7,6 +7,8 @@ signal completed()
 signal failed()
 
 func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+
 	ship.died.connect(func(): 
 		await get_tree().create_timer(1.0).timeout
 		failed.emit()
@@ -16,6 +18,8 @@ func _ready():
 		failed.connect(get_tree().reload_current_scene)
 
 func _process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	if Input.is_action_just_pressed("reset"):
 		failed.emit();
 
