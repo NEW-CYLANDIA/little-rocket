@@ -16,6 +16,7 @@ func _ready():
 
 func _on_area_entered(area:Area2D):
 	if area is Bullet:
+		area.queue_free();
 		if hp > 0:
 			if flash:
 				flash.start();
