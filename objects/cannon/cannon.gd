@@ -40,4 +40,3 @@ func on_body_entered_input(body):
 			simple_body.sleeping = true;
 			simple_body.linear_velocity = Vector2.ZERO;
 			cannonball_entered.emit()
-
