@@ -21,6 +21,9 @@ tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAA
 [node name="PlayerSpawn" parent="." index="1" unique_id=2046660635]
 position = Vector2(-230, 0)
 
+[node name="Portal" parent="." index="2" unique_id=1272979912]
+position = Vector2(-407, 172)
+
 [node name="Cannon3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="0" unique_id=1600842839 instance=ExtResource("3_b4sxl")]
 position = Vector2(-704.0001, 168.00006)
 rotation = 5.759587
