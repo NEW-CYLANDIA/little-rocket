@@ -40,7 +40,3 @@ func on_body_entered_input(body):
 			simple_body.sleeping = true;
 			simple_body.linear_velocity = Vector2.ZERO;
 			cannonball_entered.emit()
-
-
-func _on_switch_3_switched() -> void:
-	pass # Replace with function body.
