@@ -60,10 +60,10 @@ func die():
 	died.emit();
 
 func _on_collider_area_entered(area):
+	if area is Bullet: area.queue_free();
 	if not area is Bullet or not area.owned_by_ship:
 		die();
 
 
-func _on_collider_body_entered(body):
-	if not body is Bullet or not body.owned_by_ship:
-		die();
+func _on_collider_body_entered(_body):
+	die();
