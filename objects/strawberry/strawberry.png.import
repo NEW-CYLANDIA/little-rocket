@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dks6pgobb4btk"
-path="res://.godot/imported/fuel_pickup.png-8b054cd36fbe4d7327ee536a153f5db3.ctex"
+uid="uid://c487tje0vpsyr"
+path="res://.godot/imported/strawberry.png-50d938742207faf01bde703feeee5987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/fuel_pickup.png"
-dest_files=["res://.godot/imported/fuel_pickup.png-8b054cd36fbe4d7327ee536a153f5db3.ctex"]
+source_file="res://objects/strawberry/strawberry.png"
+dest_files=["res://.godot/imported/strawberry.png-50d938742207faf01bde703feeee5987.ctex"]
 
 [params]
 
