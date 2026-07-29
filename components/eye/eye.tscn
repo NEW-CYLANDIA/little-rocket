@@ -3,20 +3,27 @@
 [ext_resource type="Script" uid="uid://f8l44vpdoi3g" path="res://components/eye/eye.gd" id="1_uggby"]
 [ext_resource type="Texture2D" uid="uid://dgkqbr7tmnr64" path="res://components/eye/eye.png" id="2_t3eo3"]
 
-[node name="Eye" type="Node2D" unique_id=470195427]
+[node name="Eye" type="Node2D" unique_id=470195427 groups=["trigger"]]
 script = ExtResource("1_uggby")
 cooldown = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005768643]
 texture = ExtResource("2_t3eo3")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1373657561]
+[node name="LevelRaycast" type="RayCast2D" parent="." unique_id=1373657561]
+position = Vector2(3, 0)
+target_position = Vector2(109, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="DetectionRaycast" type="RayCast2D" parent="." unique_id=1940463068]
+position = Vector2(3, 0)
 target_position = Vector2(109, 0)
 collide_with_areas = true
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1741297980]
 show_behind_parent = true
-points = PackedVector2Array(108, 0, 1, 0)
+points = PackedVector2Array(1, 0, 108, 0)
 width = 1.0
 default_color = Color(0.8862745, 0.23921569, 0.4117647, 1)
 

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqvwewc084u0o"]
+
+[ext_resource type="PackedScene" uid="uid://dl5ietspq13u1" path="res://components/eye/eye.tscn" id="1_4qjal"]
+[ext_resource type="PackedScene" uid="uid://bccocynq72uu8" path="res://components/gun/gun.tscn" id="2_50gud"]
+
+[node name="Turret" type="Node2D" unique_id=715076560]
+
+[node name="Eye" parent="." unique_id=470195427 instance=ExtResource("1_4qjal")]
+
+[node name="Gun" parent="." unique_id=1534434290 instance=ExtResource("2_50gud")]
+position = Vector2(3, 0)
+
+[connection signal="saw_player" from="Eye" to="Gun" method="shoot_burst" binds= [3]]

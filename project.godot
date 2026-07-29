@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Little Rocket"
-run/main_scene="uid://yn5r6iaxkovl"
+run/main_scene="uid://8kweb5ox2jps"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,12 +22,18 @@ window/size/viewport_height=180
 window/size/resizable=false
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/lbg.godot.ninepatchsprite2d/plugin.cfg")
+enabled=PackedStringArray()
+
+[global_group]
+
+triggerable=""
+trigger=""
+barrel=""
 
 [input]
 
@@ -70,15 +76,17 @@ down={
 [layer_names]
 
 2d_physics/layer_1="Ship"
-2d_physics/layer_2="Level"
+2d_physics/layer_2="Solid"
 2d_physics/layer_3="Shootable"
 2d_physics/layer_4="Fuel"
 2d_physics/layer_5="Portal"
 2d_physics/layer_6="Launchpad"
+2d_physics/layer_7="Bullet"
 
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity_vector=Vector2(0, 0.2)
 
 [rendering]
 
@@ -86,3 +94,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

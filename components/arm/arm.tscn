@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://b1cylhm4e1eho"]
+
+[ext_resource type="Script" uid="uid://ctatydmb6kily" path="res://components/arm/arm.gd" id="1_janav"]
+[ext_resource type="Script" uid="uid://bec87tvf2sp54" path="res://components/arm/links.gd" id="2_p52jd"]
+[ext_resource type="PackedScene" uid="uid://bo7qpd3cmdmtr" path="res://components/arm/link.tscn" id="3_amf87"]
+[ext_resource type="Texture2D" uid="uid://br02tkjq35jal" path="res://components/arm/base.png" id="4_ldnkv"]
+[ext_resource type="Texture2D" uid="uid://ccrfeivgsy63t" path="res://components/arm/claw-sheet.png" id="5_jfxby"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otnwt"]
+atlas = ExtResource("5_jfxby")
+region = Rect2(0, 0, 22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xj4h"]
+atlas = ExtResource("5_jfxby")
+region = Rect2(22, 0, 22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v6r0"]
+atlas = ExtResource("5_jfxby")
+region = Rect2(44, 0, 22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyinl"]
+atlas = ExtResource("5_jfxby")
+region = Rect2(44, 0, 22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10c2w"]
+atlas = ExtResource("5_jfxby")
+region = Rect2(22, 0, 22, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg2xm"]
+atlas = ExtResource("5_jfxby")
+region = Rect2(0, 0, 22, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaxfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otnwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xj4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v6r0")
+}],
+"loop": 1,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyinl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10c2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg2xm")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0uuj"]
+radius = 7.0
+
+[node name="Arm" type="Node2D" unique_id=1030873307]
+script = ExtResource("1_janav")
+
+[node name="Links" type="Node2D" parent="." unique_id=601117021 node_paths=PackedStringArray("source", "destination")]
+position = Vector2(32, 106)
+script = ExtResource("2_p52jd")
+source = NodePath("../Base")
+destination = NodePath("../Claw")
+link_amount = 5
+link_scene = ExtResource("3_amf87")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1778744763]
+position = Vector2(32, 106)
+texture = ExtResource("4_ldnkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1599368334]
+
+[node name="Claw" type="AnimatedSprite2D" parent="." unique_id=1580048942]
+position = Vector2(32, 110)
+sprite_frames = SubResource("SpriteFrames_vaxfo")
+animation = &"open"
+offset = Vector2(0, 5)
+
+[node name="Area2D" type="Area2D" parent="Claw" unique_id=607817034]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Claw/Area2D" unique_id=1461187422]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_i0uuj")

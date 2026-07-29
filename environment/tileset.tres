@@ -1,0 +1,38 @@
+[gd_resource type="TileSet" format=3 uid="uid://2t3bdo3y36y7"]
+
+[ext_resource type="Texture2D" uid="uid://c5ublyi6ndmxh" path="res://environment/simple_tiles.png" id="1_qsi2p"]
+[ext_resource type="PackedScene" uid="uid://bsknh3cairn2e" path="res://objects/barrel/barrel.tscn" id="2_5h8nu"]
+[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="3_1tixm"]
+[ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="4_b6p3n"]
+[ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="5_d42tg"]
+[ext_resource type="PackedScene" uid="uid://qnfaxs6tnuct" path="res://objects/fuel_pickup/fuel_pickup.tscn" id="6_xbkwp"]
+[ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="7_7kibm"]
+[ext_resource type="PackedScene" uid="uid://bqvwewc084u0o" path="res://objects/turret/turret.tscn" id="8_rvp1j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vaxfo"]
+texture = ExtResource("1_qsi2p")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fd1e0"]
+resource_name = "Objects"
+scenes/1/scene = ExtResource("2_5h8nu")
+scenes/2/scene = ExtResource("3_1tixm")
+scenes/3/scene = ExtResource("4_b6p3n")
+scenes/4/scene = ExtResource("5_d42tg")
+scenes/5/scene = ExtResource("6_xbkwp")
+scenes/6/scene = ExtResource("7_7kibm")
+scenes/7/scene = ExtResource("8_rvp1j")
+
+[resource]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 258
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_vaxfo")
+sources/1 = SubResource("TileSetScenesCollectionSource_fd1e0")

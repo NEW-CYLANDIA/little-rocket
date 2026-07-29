@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cq8xift578u5g"]
+
+[ext_resource type="Shader" uid="uid://brwygwu5yfmkv" path="res://objects/laser/Laser.gdshader" id="1_ejt2u"]
+[ext_resource type="Texture2D" uid="uid://b1anft6omia5n" path="res://objects/laser/laser.png" id="2_xfo75"]
+[ext_resource type="Script" uid="uid://cmap8on0e2hay" path="res://objects/laser/laser.gd" id="3_8f502"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cy4ni"]
+shader = ExtResource("1_ejt2u")
+shader_parameter/scroll_speed = 2.000000569999999
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_i0uuj"]
+resource_local_to_scene = true
+b = Vector2(32, 40)
+
+[node name="Laser" type="Line2D" unique_id=2039897366]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_cy4ni")
+points = PackedVector2Array(0, 0, 32, 40)
+texture = ExtResource("2_xfo75")
+texture_mode = 1
+script = ExtResource("3_8f502")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=837137463]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=424395629]
+shape = SubResource("SegmentShape2D_i0uuj")

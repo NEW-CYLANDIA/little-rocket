@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dh3nmvfkc07rp"]
+
+[ext_resource type="Script" uid="uid://c4ir8xwy6601w" path="res://objects/conveyor/conveyor_belt.gd" id="1_uymj0"]
+
+[node name="ConveyorBelt" type="Node2D" unique_id=144110766 groups=["triggerable"]]
+script = ExtResource("1_uymj0")
+speed = 100.0
+start_on = true

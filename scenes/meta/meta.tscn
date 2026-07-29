@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://8kweb5ox2jps"]
+
+[ext_resource type="Script" uid="uid://c1k7p70udugx3" path="res://scenes/meta/meta.gd" id="1_eyv7s"]
+[ext_resource type="PackedScene" uid="uid://xh7vxm2l5rae" path="res://scenes/game/game.tscn" id="2_8igsg"]
+
+[node name="Meta" type="Node2D" unique_id=1774826894]
+script = ExtResource("1_eyv7s")
+scenes = Dictionary[int, PackedScene]({
+0: ExtResource("2_8igsg")
+})

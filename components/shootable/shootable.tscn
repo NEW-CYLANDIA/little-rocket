@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b08i64kk02pon" path="res://components/shootable/shootable.gd" id="1_mdgn0"]
 
-[node name="Shootable" type="Area2D" unique_id=1462746512]
+[node name="Destructible" type="Area2D" unique_id=1462746512]
 collision_layer = 4
-collision_mask = 64
+collision_mask = 66
 script = ExtResource("1_mdgn0")

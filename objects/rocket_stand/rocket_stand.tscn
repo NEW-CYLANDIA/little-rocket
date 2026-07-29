@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bl0gnptskv81o" path="res://objects/rocket_stand/rocket_stand.png" id="1_47q8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
-size = Vector2(8, 7)
+size = Vector2(8, 8)
 
 [node name="RocketStand" type="StaticBody2D" unique_id=43085775]
 collision_layer = 33
@@ -13,5 +13,5 @@ collision_mask = 0
 texture = ExtResource("1_47q8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289023223]
-position = Vector2(-3, 12.5)
+position = Vector2(-3, 10)
 shape = SubResource("RectangleShape2D_i0uuj")

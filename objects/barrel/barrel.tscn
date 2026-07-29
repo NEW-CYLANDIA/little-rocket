@@ -7,23 +7,27 @@
 [ext_resource type="PackedScene" uid="uid://m05cuvw7cgrr" path="res://components/fuel_output/fuel_output.tscn" id="4_ygdis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
-size = Vector2(14, 15)
+size = Vector2(14, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
-size = Vector2(10, 13)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10c2w"]
+radius = 5.0
+height = 14.0
 
-[node name="Barrel" type="Node2D" unique_id=353102213]
+[node name="Barrel" type="RigidBody2D" unique_id=236329877 groups=["barrel"]]
+collision_layer = 2
+collision_mask = 2
+lock_rotation = true
 script = ExtResource("2_6iawg")
 
-[node name="Shootable" parent="." unique_id=1462746512 node_paths=PackedStringArray("flash") instance=ExtResource("2_kh7lf")]
+[node name="Destructible" parent="." unique_id=1462746512 node_paths=PackedStringArray("flash") instance=ExtResource("2_kh7lf")]
 flash = NodePath("Flash")
 explode_on_death = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shootable" unique_id=486517540]
-position = Vector2(0, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Destructible" unique_id=486517540]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_nlb7l")
 
-[node name="Flash" parent="Shootable" unique_id=297627589 instance=ExtResource("3_rdxsi")]
+[node name="Flash" parent="Destructible" unique_id=297627589 instance=ExtResource("3_rdxsi")]
 visible = false
 z_index = 1
 scale = Vector2(11.999999, 13.999998)
@@ -35,12 +39,7 @@ launch_speed = 250
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1371533362]
 texture = ExtResource("1_rdxsi")
 
-[node name="Collider" type="Area2D" parent="." unique_id=2118737782]
-collision_layer = 2
-collision_mask = 0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1861599860]
+shape = SubResource("CapsuleShape2D_10c2w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider" unique_id=1109108370]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_i0uuj")
-
-[connection signal="destroyed" from="Shootable" to="." method="_on_shootable_destroyed"]
+[connection signal="destroyed" from="Destructible" to="." method="_on_shootable_destroyed"]
