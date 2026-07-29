@@ -191,7 +191,7 @@ sources/2 = SubResource("TileSetAtlasSource_e2o6t")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i0uuj"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5v6r0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10c2w"]
 shader = ExtResource("10_1iff4")
 shader_parameter/patch_left = 0.25
 shader_parameter/patch_top = 0.25
@@ -293,7 +293,7 @@ forces = [NodePath("Rocket")]
 metadata/_edit_group_ = true
 
 [node name="NinePatchSprite2D" type="Sprite2D" parent="LevelObjects/Door" unique_id=124892756]
-material = SubResource("ShaderMaterial_5v6r0")
+material = SubResource("ShaderMaterial_10c2w")
 position = Vector2(7.999996, 40)
 scale = Vector2(0.75000036, 6)
 texture = ExtResource("11_4vuph")
