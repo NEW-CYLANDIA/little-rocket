@@ -1,0 +1,139 @@
+[gd_scene format=4 uid="uid://bv1454cti1l2x"]
+
+[ext_resource type="PackedScene" uid="uid://yn5r6iaxkovl" path="res://scenes/levels/base_level.tscn" id="1_4wfvb"]
+[ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="2_tqv5a"]
+[ext_resource type="PackedScene" uid="uid://dh3nmvfkc07rp" path="res://objects/conveyor/conveyor_belt.tscn" id="3_ppjov"]
+[ext_resource type="PackedScene" uid="uid://ca8psg28bb0im" path="res://objects/conveyor/conveyor.tscn" id="4_pafwe"]
+[ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="5_gf2l7"]
+[ext_resource type="PackedScene" uid="uid://dw6avfl8awuk4" path="res://components/timer/timer.tscn" id="6_glmj6"]
+[ext_resource type="PackedScene" uid="uid://bsknh3cairn2e" path="res://objects/barrel/barrel.tscn" id="7_cfbu6"]
+[ext_resource type="Script" uid="uid://1rpg45rcorat" path="res://systems/toggle_group.gd" id="8_bvftm"]
+[ext_resource type="PackedScene" uid="uid://cq8xift578u5g" path="res://objects/laser/laser.tscn" id="9_4fymt"]
+[ext_resource type="PackedScene" uid="uid://qnfaxs6tnuct" path="res://objects/fuel_pickup/fuel_pickup.tscn" id="10_sb0xc"]
+[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="11_uu8qo"]
+[ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="12_3wtmn"]
+[ext_resource type="PackedScene" uid="uid://fsjnpsds4nq" path="res://objects/strawberry/strawberry.tscn" id="13_cbgmi"]
+
+[node name="Level" unique_id=2144015312 instance=ExtResource("1_4wfvb")]
+
+[node name="Level" parent="." index="0" unique_id=1468971203]
+tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAAC1/xYAAAAAAAAAAAC0/xYAAAAAAAAAAACz/xYAAAAAAAAAAACy/xYAAAAAAAAAAACx/xYAAAAAAAAAAACw/xYAAAAAAAAAAAC1/w4AAAAAAAAAAAC0/w4AAAAAAAAAAACz/w4AAAAAAAAAAACy/w4AAAAAAAAAAACx/w4AAAAAAAAAAACw/w4AAAAAAAAAAACv/xYAAAAAAAAAAACu/xYAAAAAAAAAAACt/xYAAAAAAAAAAACs/xYAAAAAAAAAAACv/w4AAAAAAAAAAACu/w4AAAAAAAAAAACt/w4AAAAAAAAAAACs/w4AAAAAAAAAAACr/w4AAAAAAAAAAACq/w4AAAAAAAAAAACr/xYAAAAAAAAAAACq/xYAAAAAAAAAAAC+/xYAAAABAAAAAAC+/xUAAAABAAAAAAC+/xQAAAABAAAAAAC8/xYAAAABAAAAAAC8/xUAAAABAAAAAAC8/xQAAAABAAAAAABr/83/AAAAAAAAAABr/87/AAAAAAAAAABr/8//AAAAAAAAAABr/9D/AAAAAAAAAABr/9H/AAAAAAAAAABr/9L/AAAAAAAAAABr/9P/AAAAAAAAAABs/8z/AAAAAAAAAABr/8z/AAAAAAAAAABt/8z/AAAAAAAAAABu/8z/AAAAAAAAAABv/8z/AAAAAAAAAABw/8z/AAAAAAAAAABx/8z/AAAAAAAAAABy/8z/AAAAAAAAAABz/8z/AAAAAAAAAAB0/8z/AAAAAAAAAAB1/8z/AAAAAAAAAAB2/8z/AAAAAAAAAAB3/8z/AAAAAAAAAAB4/8z/AAAAAAAAAAB5/8z/AAAAAAAAAAB6/8z/AAAAAAAAAAB7/8z/AAAAAAAAAAB8/8z/AAAAAAAAAAB9/8z/AAAAAAAAAAB+/8z/AAAAAAAAAAB//8z/AAAAAAAAAACA/8z/AAAAAAAAAABr/9T/AAAAAAAAAABr/9X/AAAAAAAAAABs/9X/AAAAAAAAAABt/9X/AAAAAAAAAABu/9X/AAAAAAAA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AACr/+D/AAAAAAAAAACq/+D/AAAAAAAAAACq/9//AAAAAAAAAACp/9//AAAAAAAAAACp/97/AAAAAAAAAACH/+D/AAAAAAAAAACH/+H/AAAAAAAAAACH/9//AAAAAAAAAACK/+T/AAABAAAAAACK/+X/AAABAAAAAACK/+b/AAABAAAAAACL/+b/AAABAAAAAACM/+b/AAABAAAAAACN/+f/AAABAAAAAACN/+j/AAABAAAAAACd/9v/AAAAAAAAAACg/9v/AAAAAAAAAACd/9r/AAAAAAAAAACd/9n/AAAAAAAAAACd/9j/AAAAAAAAAACe/9j/AAAAAAAAAACf/9j/AAAAAAAAAACg/9j/AAAAAAAAAACg/9n/AAAAAAAAAACg/9r/AAAAAAAAAACe//P/AAAAAAAAAACl/97/AAAAAAAAAACm/97/AAAAAAAAAACn/9z/AAAAAAAAAACn/97/AAAAAAAAAACo/9z/AAAAAAAAAACp/9z/AAAAAAAAAACp/93/AAAAAAAAAACq/9z/AAAAAAAAAACq/93/AAAAAAAAAACq/97/AAAAAAAAAACr/9z/AAAAAAAAAACr/93/AAAAAAAAAACr/97/AAAAAAAAAACs/9z/AAAAAAAAAACs/93/AAAAAAAAAACs/97/AAAAAAAAAACp/+D/AAAAAAAAAACp/+H/AAAAAAAAAACp/+L/AAAAAAAAAACp/+P/AAAAAAAAAACp/+T/AAAAAAAAAACp/+X/AAAAAAAAAACp/+b/AAAAAAAAAACp/+f/AAAAAAAAAACp/+j/AAAAAAAAAACp/+n/AAAAAAAAAACq/+H/AAAAAAAAAACq/+L/AAAAAAAAAACq/+P/AAAAAAAAAACq/+T/AAAAAAAAAACq/+X/AAAAAAAAAACq/+b/AAAAAAAAAACq/+f/AAAAAAAAAACq/+j/AAAAAAAAAACq/+n/AAAAAAAAAACr/9//AAAAAAAAAACr/+L/AAAAAAAAAACr/+P/AAAAAAAAAACr/+T/AAAAAAAAAACr/+X/AAAAAAAAAACr/+b/AAAAAAAAAACr/+f/AAAAAAAAAACr/+j/AAAAAAAAAACr/+n/AAAAAAAAAACs/9//AAAAAAAAAACs/+D/AAAAAAAAAACs/+P/AAAAAAAAAACs/+T/AAAAAAAAAACs/+X/AAAAAAAAAACs/+b/AAAAAAAAAACs/+f/AAAAAAAAAACs/+j/AAAAAAAAAACs/+n/AAAAAAAAAACl/+f/AAAAAAAAAACl/+j/AAAAAAAAAACl/+n/AAAAAAAAAACm/+f/AAAAAAAAAACm/+j/AAAAAAAAAACm/+n/AAAAAAAAAACn/+f/AAAAAAAAAACn/+j/AAAAAAAAAACn/+n/AAAAAAAAAACo/+f/AAAAAAAAAACo/+j/AAAAAAAAAACo/+n/AAAAAAAAAACl/+r/AAAAAAAAAACl/+v/AAAAAAAAAACl/+z/AAAAAAAAAACl/+3/AAAAAAAAAACl/+7/AAAAAAAAAACl/+//AAAAAAAAAACl//D/AAAAAAAAAACl//H/AAAAAAAAAACl//L/AAAAAAAAAACl//P/AAAAAAAAAACk//P/AAAAAAAAAACj//P/AAAAAAAAAACi//P/AAAAAAAAAACh//P/AAAAAAAAAACg//P/AAAAAAAAAACf//P/AAAAAAAAAAA=")
+
+[node name="PlayerSpawn" parent="." index="1" unique_id=2046660635]
+position = Vector2(-230, 0)
+
+[node name="Ship" parent="PlayerSpawn" index="0" unique_id=907624824]
+position = Vector2(-891, -373)
+
+[node name="RocketStand" parent="PlayerSpawn" index="1" unique_id=43085775]
+position = Vector2(-888, -377)
+
+[node name="Camera2D" parent="PlayerSpawn" index="2" unique_id=1644109525]
+position = Vector2(-879, -374)
+
+[node name="Portal" parent="." index="2" unique_id=1272979912]
+position = Vector2(-712, -235)
+
+[node name="Cannon3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="0" unique_id=1600842839 instance=ExtResource("2_tqv5a")]
+position = Vector2(-704.0001, 168.00006)
+rotation = 5.759587
+
+[node name="ConveyorBelt" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=144110766 instance=ExtResource("3_ppjov")]
+position = Vector2(-625, 168)
+speed = -100.0
+
+[node name="Conveyor" parent="LevelObjects/ConveyorBelt" index="0" unique_id=1297743976 instance=ExtResource("4_pafwe")]
+position = Vector2(-16, 0)
+
+[node name="Conveyor2" parent="LevelObjects/ConveyorBelt" index="1" unique_id=361846214 instance=ExtResource("4_pafwe")]
+position = Vector2(16, 0)
+
+[node name="Conveyor3" parent="LevelObjects/ConveyorBelt" index="2" unique_id=1823889921 instance=ExtResource("4_pafwe")]
+position = Vector2(-48, 0)
+
+[node name="Switch2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="2" unique_id=1794953446 instance=ExtResource("5_gf2l7")]
+position = Vector2(-536, 144)
+
+[node name="Switch3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="3" unique_id=947060351 instance=ExtResource("5_gf2l7")]
+position = Vector2(-776, -304)
+
+[node name="Timer" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="4" unique_id=2141239095 instance=ExtResource("6_glmj6")]
+position = Vector2(-633, 112)
+wait_time = 1.0
+
+[node name="Barrel" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="5" unique_id=236329877 instance=ExtResource("7_cfbu6")]
+position = Vector2(-464, 200)
+
+[node name="Barrel2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="6" unique_id=391095416 instance=ExtResource("7_cfbu6")]
+position = Vector2(-953, -297)
+
+[node name="Barrel3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="7" unique_id=908528785 instance=ExtResource("7_cfbu6")]
+position = Vector2(-953, -312)
+
+[node name="Barrel4" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="8" unique_id=1071640722 instance=ExtResource("7_cfbu6")]
+position = Vector2(-734, -112)
+
+[node name="Barrel5" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="9" unique_id=13749853 instance=ExtResource("7_cfbu6")]
+position = Vector2(-735, -128)
+
+[node name="Barrel6" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="10" unique_id=1790694967 instance=ExtResource("7_cfbu6")]
+position = Vector2(-736, -143)
+
+[node name="ToggleGroup" type="Node2D" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="11" unique_id=164948575]
+position = Vector2(136, 40)
+script = ExtResource("8_bvftm")
+
+[node name="Laser" parent="LevelObjects/ToggleGroup" index="0" unique_id=2039897366 instance=ExtResource("9_4fymt")]
+position = Vector2(-617, 136)
+points = PackedVector2Array(0, -16, 0, 32)
+
+[node name="Laser2" parent="LevelObjects/ToggleGroup" index="1" unique_id=242119985 instance=ExtResource("9_4fymt")]
+position = Vector2(-592, 162)
+points = PackedVector2Array(32, -16, 0, 32)
+
+[node name="FuelCollectible" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="12" unique_id=1281885659 instance=ExtResource("10_sb0xc")]
+position = Vector2(-600, 232)
+
+[node name="FuelCollectible2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="13" unique_id=2075575851 instance=ExtResource("10_sb0xc")]
+position = Vector2(-640, 248)
+
+[node name="FuelCollectible3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="14" unique_id=1927124927 instance=ExtResource("10_sb0xc")]
+position = Vector2(-688, 232)
+
+[node name="StaticBody2D" parent="." index="6" unique_id=1247794687 instance=ExtResource("11_uu8qo")]
+position = Vector2(-496, 152)
+
+[node name="StaticBody2D3" parent="." index="7" unique_id=1369045668 instance=ExtResource("11_uu8qo")]
+position = Vector2(-464, 152)
+
+[node name="Box" parent="." index="8" unique_id=1651556813 instance=ExtResource("12_3wtmn")]
+position = Vector2(-496, 192)
+
+[node name="Box2" parent="." index="9" unique_id=841220816 instance=ExtResource("12_3wtmn")]
+position = Vector2(-464, 120)
+
+[node name="Box3" parent="." index="10" unique_id=1385929917 instance=ExtResource("12_3wtmn")]
+position = Vector2(-920, -331)
+size = Vector2(3.81, 1)
+
+[node name="Box4" parent="." index="11" unique_id=700283489 instance=ExtResource("12_3wtmn")]
+position = Vector2(-1176, -353)
+
+[node name="Box5" parent="." index="12" unique_id=1236782522 instance=ExtResource("12_3wtmn")]
+position = Vector2(-1118, -353)
+
+[node name="Box7" parent="." index="13" unique_id=1019959794 instance=ExtResource("12_3wtmn")]
+position = Vector2(-1035, -353)
+
+[node name="Box8" parent="." index="14" unique_id=1976045422 instance=ExtResource("12_3wtmn")]
+position = Vector2(-737, -226)
+gravity_scale = 0.0
+size = Vector2(1, 6.7)
+
+[node name="Strawberry" parent="." index="15" unique_id=1426214086 instance=ExtResource("13_cbgmi")]
+position = Vector2(-929, -216)
+
+[connection signal="cannonball_entered" from="LevelObjects/Cannon3" to="LevelObjects/Cannon3" method="fire"]
+[connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ConveyorBelt" method="reverse"]
+[connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ToggleGroup" method="toggle"]
+[connection signal="switched" from="LevelObjects/Switch3" to="Box8" method="set_gravity" binds= [1.0]]
