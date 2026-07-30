@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://l2276o3131o7"]
+[gd_scene format=4 uid="uid://bk7lben460j7l"]
 
 [ext_resource type="PackedScene" uid="uid://yn5r6iaxkovl" path="res://scenes/levels/base_level.tscn" id="1_qi5uv"]
 [ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="2_f6egh"]

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dd04t6dtovpxm"]
+[gd_scene format=4 uid="uid://b74p5m3t61vqh"]
 
 [ext_resource type="PackedScene" uid="uid://yn5r6iaxkovl" path="res://scenes/levels/base_level.tscn" id="1_6xwso"]
 [ext_resource type="PackedScene" uid="uid://b3nx8gjqmfo7a" path="res://objects/ship/ship.tscn" id="2_0y7y4"]
