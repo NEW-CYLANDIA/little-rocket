@@ -10,4 +10,4 @@ func trigger():
 		var new_fuel := fuel_prefab.instantiate() as Fuel;
 		new_fuel.launch(Vector2.from_angle(deg_to_rad(angle)).normalized() * launch_speed)
 		new_fuel.global_position = global_position;
-		get_tree().root.call_deferred("add_child", new_fuel)
+		get_parent().call_deferred("add_child", new_fuel)

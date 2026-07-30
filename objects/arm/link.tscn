@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bo7qpd3cmdmtr"]
 
-[ext_resource type="Texture2D" uid="uid://ua6g1gor16s5" path="res://components/arm/link.png" id="1_e66xj"]
+[ext_resource type="Texture2D" uid="uid://ua6g1gor16s5" path="res://objects/arm/link.png" id="1_e66xj"]
 
 [node name="Link" type="Sprite2D" unique_id=1894219163]
 texture = ExtResource("1_e66xj")

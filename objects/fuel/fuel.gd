@@ -10,6 +10,9 @@ var registered_inputs:Array[FuelInput]
 func _physics_process(delta):
 	# If we're detected by multiple inputs,
 	# only go towards closest one.
+	
+	# make sure there's no invalid instances in there
+	registered_inputs = registered_inputs.filter(func(input): return is_instance_valid(input))
 	if registered_inputs.size() > 0:
 		registered_inputs.sort_custom(func(a:Node2D, b:Node2D): 
 			return global_position.distance_to(a.global_position) < global_position.distance_to(b.global_position))

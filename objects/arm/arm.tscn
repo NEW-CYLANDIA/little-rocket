@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dv2m1lsmkeua8"]
+
+[ext_resource type="Script" uid="uid://bglqh3pbpvi4s" path="res://objects/arm/arm.gd" id="1_vopon"]
+[ext_resource type="Texture2D" uid="uid://dub471ovr03qs" path="res://objects/arm/base.png" id="2_i5xt7"]
+[ext_resource type="Script" uid="uid://bec87tvf2sp54" path="res://objects/arm/links.gd" id="3_bo74x"]
+[ext_resource type="PackedScene" uid="uid://bo7qpd3cmdmtr" path="res://objects/arm/link.tscn" id="4_frjs7"]
+
+[node name="Arm" type="Node2D" unique_id=184563611]
+script = ExtResource("1_vopon")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=229118030]
+position = Vector2(0, 4)
+texture = ExtResource("2_i5xt7")
+
+[node name="Chain" type="Node2D" parent="." unique_id=1710703765 node_paths=PackedStringArray("source")]
+position = Vector2(0, 2)
+script = ExtResource("3_bo74x")
+source = NodePath("../Base")
+link_amount = 10
+link_scene = ExtResource("4_frjs7")
