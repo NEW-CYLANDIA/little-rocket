@@ -7,7 +7,6 @@
 
 [node name="Arm" type="Node2D" unique_id=184563611]
 script = ExtResource("1_vopon")
-speed = null
 
 [node name="Base" type="Sprite2D" parent="." unique_id=229118030]
 position = Vector2(0, 4)

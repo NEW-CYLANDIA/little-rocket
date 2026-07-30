@@ -13,6 +13,6 @@ func _process(_d):
 		panel.size = scaled_size;
 		panel.position = -scaled_size/2;
 		var rect_shape = collision_shape.shape as RectangleShape2D
-		rect_shape.size = scaled_size;
+		rect_shape.size = scaled_size - Vector2.ONE;
 func _physics_process(_delta):
 	if not Engine.is_editor_hint(): super(_delta);
