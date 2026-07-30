@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dv2m1lsmkeua8"]
 
-[ext_resource type="Script" uid="uid://bglqh3pbpvi4s" path="res://scenes/levels/arm.gd" id="1_vopon"]
+[ext_resource type="Script" uid="uid://bglqh3pbpvi4s" path="res://objects/arm/arm.gd" id="1_vopon"]
 [ext_resource type="Texture2D" uid="uid://dub471ovr03qs" path="res://objects/arm/base.png" id="2_i5xt7"]
 [ext_resource type="Script" uid="uid://bec87tvf2sp54" path="res://objects/arm/links.gd" id="3_bo74x"]
 [ext_resource type="PackedScene" uid="uid://bo7qpd3cmdmtr" path="res://objects/arm/link.tscn" id="4_frjs7"]

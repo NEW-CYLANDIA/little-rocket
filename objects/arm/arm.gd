@@ -45,6 +45,7 @@ func _process(delta):
 		if attachment is SimpleBody and use_physics:
 			attachment.gravity_scale = 0;
 			var force = (current_dest - attachment.position)
+			print(force)
 			attachment.add_constant_force(force)       
 		else:
 			if attachment.position.distance_to(current_dest) < 1:
