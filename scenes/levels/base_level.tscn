@@ -55,4 +55,6 @@ shape = SubResource("RectangleShape2D_nlb7l")
 script = ExtResource("7_8iyoh")
 connection_scene = ExtResource("8_mq31s")
 
+[node name="InstanceParent" type="Node2D" parent="." unique_id=1120185241 groups=["instance_parent"]]
+
 [connection signal="ship_entered" from="Portal" to="." method="_on_portal_ship_entered"]

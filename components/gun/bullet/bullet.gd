@@ -6,7 +6,6 @@ var owned_by_ship:bool = false;
 var velocity:Vector2 = Vector2.ZERO;
 @onready var wall_detector = $WallDetector
 func _ready():
-	top_level = true;
 	wall_detector.area_entered.connect(func(_a): queue_free());
 	wall_detector.body_entered.connect(func(_b): queue_free())
 func _physics_process(delta):

@@ -58,6 +58,7 @@ func die():
 	get_parent().add_child(new_explosion)
 	new_explosion.global_position = global_position
 	died.emit();
+	queue_free();
 
 func _on_collider_area_entered(area):
 	if area is Bullet: area.queue_free();
