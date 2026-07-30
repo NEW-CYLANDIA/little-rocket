@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="4_a64th"]
 [ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="5_b4sxl"]
 [ext_resource type="PackedScene" uid="uid://dv2m1lsmkeua8" path="res://objects/arm/arm.tscn" id="14_cbuer"]
+[ext_resource type="PackedScene" uid="uid://bqkln7v3kbca2" path="res://components/wheel/wheel.tscn" id="17_mioch"]
 
 [node name="Level" unique_id=2144015312 instance=ExtResource("1_xf1sy")]
 
@@ -22,31 +23,33 @@ position = Vector2(-407, 172)
 position = Vector2(-232, 240)
 rotation = 0.0
 
-[node name="Arm" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=184563611 node_paths=PackedStringArray("attachment", "retract_position_reference") instance=ExtResource("14_cbuer")]
-position = Vector2(-208, 72)
-rotation = -3.1415925
-attachment = NodePath("../Box")
-retract_position_reference = NodePath("../RetractPosition")
-use_physics = null
-chain_links = 10
-
-[node name="RetractPosition" type="Node2D" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="2" unique_id=1928798204]
-position = Vector2(-208, 72)
-
-[node name="Box" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="3" unique_id=1651556813 instance=ExtResource("4_a64th")]
+[node name="Box" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=1651556813 instance=ExtResource("4_a64th")]
 position = Vector2(-208, 208)
 size = Vector2(1, 5)
 
-[node name="Barrel" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="4" unique_id=236329877 instance=ExtResource("3_ea3gy")]
-position = Vector2(-208, 159)
-
-[node name="Barrel2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="5" unique_id=2032826580 instance=ExtResource("3_ea3gy")]
+[node name="Barrel2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="2" unique_id=2032826580 instance=ExtResource("3_ea3gy")]
 position = Vector2(-208, 144)
 
-[node name="Barrel3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="6" unique_id=779150390 instance=ExtResource("3_ea3gy")]
+[node name="Barrel3" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="3" unique_id=779150390 instance=ExtResource("3_ea3gy")]
 position = Vector2(-208, 128)
 
-[node name="Barrel4" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="7" unique_id=1229571665 instance=ExtResource("3_ea3gy")]
+[node name="Barrel4" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="4" unique_id=1229571665 instance=ExtResource("3_ea3gy")]
 position = Vector2(-208, 112)
 
-[connection signal="switched" from="LevelObjects/Switch" to="LevelObjects/Arm" method="toggle"]
+[node name="Wheel" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="5" unique_id=260244531 instance=ExtResource("17_mioch")]
+position = Vector2(-312, 128)
+
+[node name="Arm" parent="LevelObjects/Wheel" index="1" unique_id=184563611 node_paths=PackedStringArray("attachment", "retract_position_reference") instance=ExtResource("14_cbuer")]
+position = Vector2(0, 16)
+rotation = -3.1415925
+attachment = NodePath("../Barrel")
+retract_position_reference = NodePath("../RetractPosition")
+chain_links = 10
+
+[node name="Barrel" parent="LevelObjects/Wheel" index="2" unique_id=236329877 instance=ExtResource("3_ea3gy")]
+position = Vector2(0, 48)
+
+[node name="RetractPosition" type="Node2D" parent="LevelObjects/Wheel" index="3" unique_id=1928798204]
+position = Vector2(0, 16)
+
+[connection signal="switched" from="LevelObjects/Switch" to="LevelObjects/Wheel/Arm" method="toggle"]
