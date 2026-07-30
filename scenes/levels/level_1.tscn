@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://qnfaxs6tnuct" path="res://objects/fuel_pickup/fuel_pickup.tscn" id="10_gmpev"]
 [ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="11_mkypq"]
 [ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="12_ndtll"]
+[ext_resource type="PackedScene" uid="uid://fsjnpsds4nq" path="res://objects/strawberry/strawberry.tscn" id="13_dnkej"]
 
 [node name="Level" unique_id=2144015312 instance=ExtResource("1_ksju7")]
 
@@ -120,10 +121,22 @@ position = Vector2(-930, 3)
 [node name="Barrel3" parent="Barrel6" index="4" unique_id=790856661 instance=ExtResource("7_bahl2")]
 position = Vector2(547, 205)
 
-[node name="Barrel4" parent="." index="12" unique_id=953705952 instance=ExtResource("7_bahl2")]
+[node name="Strawberry" parent="Barrel6" index="5" unique_id=1426214086 instance=ExtResource("13_dnkej")]
+position = Vector2(-447, -639)
+
+[node name="Strawberry2" parent="Barrel6" index="6" unique_id=2100400731 instance=ExtResource("13_dnkej")]
+position = Vector2(-187, 52)
+
+[node name="Barrel7" parent="." index="12" unique_id=1243219854 instance=ExtResource("7_bahl2")]
+position = Vector2(-861, 112)
+
+[node name="Barrel3" parent="Barrel7" index="4" unique_id=552338650 instance=ExtResource("7_bahl2")]
+position = Vector2(547, 205)
+
+[node name="Barrel4" parent="." index="13" unique_id=953705952 instance=ExtResource("7_bahl2")]
 position = Vector2(-761, 113)
 
-[node name="Barrel5" parent="." index="13" unique_id=631460697 instance=ExtResource("7_bahl2")]
+[node name="Barrel5" parent="." index="14" unique_id=631460697 instance=ExtResource("7_bahl2")]
 position = Vector2(-641, 72)
 
 [connection signal="cannonball_entered" from="LevelObjects/Cannon3" to="LevelObjects/Cannon3" method="fire"]

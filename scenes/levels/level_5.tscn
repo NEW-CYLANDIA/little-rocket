@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://qnfaxs6tnuct" path="res://objects/fuel_pickup/fuel_pickup.tscn" id="10_vm1kt"]
 [ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="11_wnnhf"]
 [ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="12_ahsud"]
+[ext_resource type="PackedScene" uid="uid://fsjnpsds4nq" path="res://objects/strawberry/strawberry.tscn" id="16_gruok"]
 
 [node name="Level" unique_id=2144015312 instance=ExtResource("1_6xwso")]
 
@@ -154,6 +155,9 @@ position = Vector2(-496, 120)
 
 [node name="Box2" parent="." index="10" unique_id=841220816 instance=ExtResource("12_ahsud")]
 position = Vector2(-464, 120)
+
+[node name="Strawberry" parent="." index="11" unique_id=1426214086 instance=ExtResource("16_gruok")]
+position = Vector2(-914, -41)
 
 [connection signal="cannonball_entered" from="LevelObjects/Cannon3" to="LevelObjects/Cannon3" method="fire"]
 [connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ConveyorBelt" method="reverse"]
