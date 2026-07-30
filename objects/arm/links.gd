@@ -1,5 +1,6 @@
 @tool
 extends Node2D
+class_name Chain
 @export var source:Node2D;
 @export var destination:Node2D;
 @export var link_amount:int = 20;
@@ -13,9 +14,11 @@ func _ready():
 		add_child(new_link)
 		links.append(new_link);
 func _process(_delta):
-	var pointer = destination.position - source.position;
+	print(destination.name)
+	print(source.name);
+	if destination == null or source == null: return;
+	var pointer = destination.global_position - source.global_position;
+	print(pointer)
+	pointer = pointer.normalized() * (pointer.length()-2)
 	for i in range(0, links.size()):
-		if i <= link_amount:
-			links[i].position = (pointer / link_amount) * i
-		else:
-			links[i].visible = false;
+		links[i].global_position = global_position + (pointer / (links.size()-1)) * i

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b1cylhm4e1eho"]
 
 [ext_resource type="Script" uid="uid://ctatydmb6kily" path="res://components/arm/arm.gd" id="1_janav"]
-[ext_resource type="Script" uid="uid://bec87tvf2sp54" path="res://components/arm/links.gd" id="2_p52jd"]
-[ext_resource type="PackedScene" uid="uid://bo7qpd3cmdmtr" path="res://components/arm/link.tscn" id="3_amf87"]
+[ext_resource type="Script" uid="uid://bec87tvf2sp54" path="res://objects/arm/links.gd" id="2_p52jd"]
+[ext_resource type="PackedScene" uid="uid://bo7qpd3cmdmtr" path="res://objects/arm/link.tscn" id="3_amf87"]
 [ext_resource type="Texture2D" uid="uid://br02tkjq35jal" path="res://components/arm/base.png" id="4_ldnkv"]
 [ext_resource type="Texture2D" uid="uid://ccrfeivgsy63t" path="res://components/arm/claw-sheet.png" id="5_jfxby"]
 
