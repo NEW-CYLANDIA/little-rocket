@@ -25,7 +25,9 @@ var retracted:bool = false;
 var current_dest:Vector2;
 
 func _ready():
-	retract_position = retract_position_reference.position;
+	if retract_position_reference:
+		retract_position = retract_position_reference.position;
+	else: retract_position = base.global_position
 	extend_position = attachment.position;
 	if start_retracted: 
 		attachment.position = retract_position;

@@ -9,6 +9,9 @@
 [ext_resource type="Script" uid="uid://ck602afteoar2" path="res://systems/connections/connections.gd" id="7_8iyoh"]
 [ext_resource type="PackedScene" uid="uid://b6xkl63nhqw78" path="res://systems/connections/connection.tscn" id="8_mq31s"]
 [ext_resource type="Script" uid="uid://hml3dq2f374x" path="res://environment/death_zone.gd" id="9_icy5c"]
+[ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="10_j7gcg"]
+[ext_resource type="PackedScene" uid="uid://dv2m1lsmkeua8" path="res://objects/arm/arm.tscn" id="11_qhwlw"]
+[ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="12_0caop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
 size = Vector2(1866, 554)
@@ -20,7 +23,7 @@ test_mode = true
 [node name="Level" type="TileMapLayer" parent="." unique_id=1468971203]
 z_index = -50
 position = Vector2(-1, 0)
-tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAADC/w4AAAABAAAAAADD/w4AAAABAAAAAADE/w4AAAABAAAAAADF/w4AAAABAAAAAADG/w4AAAABAAAAAADH/w4AAAABAAAAAADI/w4AAAABAAAAAAA=")
 tile_set = ExtResource("2_ouxo3")
 
 [node name="PlayerSpawn" type="Node2D" parent="." unique_id=2046660635]
@@ -57,4 +60,18 @@ connection_scene = ExtResource("8_mq31s")
 
 [node name="InstanceParent" type="Node2D" parent="." unique_id=1120185241 groups=["instance_parent"]]
 
+[node name="Box" parent="." unique_id=1651556813 instance=ExtResource("10_j7gcg")]
+position = Vector2(-472, 192)
+size = Vector2(1, 2)
+
+[node name="Arm" parent="." unique_id=184563611 node_paths=PackedStringArray("attachment") instance=ExtResource("11_qhwlw")]
+position = Vector2(-472, 128)
+rotation = 3.1415927
+attachment = NodePath("../Box")
+use_physics = true
+
+[node name="Switch" parent="." unique_id=947060351 instance=ExtResource("12_0caop")]
+position = Vector2(-488, 128)
+
 [connection signal="ship_entered" from="Portal" to="." method="_on_portal_ship_entered"]
+[connection signal="switched" from="Switch" to="Arm" method="retract"]
