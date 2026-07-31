@@ -7,7 +7,7 @@ var min_bounce_speed:float = 100;
 func _ready():
 	bounce_pad.body_entered.connect(_on_body_entered)
 	
-func _process(delta):
+func _process(_delta):
 	var facing_vec = Vector2.from_angle(sprite.global_rotation).normalized()
 	ray_cast_2d.target_position = facing_vec * 50
 func _on_body_entered(body:Node2D):

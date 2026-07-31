@@ -8,6 +8,7 @@ var current_cannonball:SimpleBody;
 var old_parent:Node
 @onready var cooldown:Timer = $Cooldown
 
+@export var can_suck_player:bool = true;
 signal cannonball_entered();
 
 func _ready():
@@ -22,7 +23,7 @@ func fire():
 	else:
 		if cannonball:
 			new_cannonball = cannonball.instantiate() as SimpleBody
-			get_parent().add_child(new_cannonball)
+			get_parent().call_deferred("add_child", new_cannonball)
 		else: return;
 	new_cannonball.speed_locked = false;
 	new_cannonball.global_position = global_position + Vector2.from_angle(global_rotation - PI/2).normalized() * 16
@@ -34,6 +35,7 @@ func on_body_entered_input(body):
 	if body is SimpleBody and body != self and cooldown.time_left == 0: 
 		var simple_body := body as SimpleBody; 
 		if cannonball_override == null:
+			if simple_body is Ship and not can_suck_player: return;
 			cannonball_override = simple_body
 			old_parent = simple_body.get_parent();
 			simple_body.get_parent().remove_child(simple_body);
