@@ -21,5 +21,3 @@ func _integrate_forces(state):
 		linear_damp = 5.0;
 		if state.linear_velocity.length() < max_speed:
 			speed_locked = true;
-func set_gravity (gravity:float):
-	gravity_scale=gravity;
