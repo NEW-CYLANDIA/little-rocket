@@ -32,7 +32,6 @@ func _ready():
 	else: retract_position = base.global_position
 	extend_position = attachment.position;
 	if start_retracted: 
-		attachment.position = retract_position;
 		retract();
 	else:
 		extend();

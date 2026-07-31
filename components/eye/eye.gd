@@ -6,10 +6,12 @@ extends Node2D
 @onready var cooldown_timer = $CooldownTimer
 @onready var line_2d = $Line2D
 
+@export var saw_player_color:Color
+@export var idle_color:Color
 signal saw_player
 
 func _physics_process(_delta):
-	line_2d.visible = cooldown_timer.time_left == 0
+	line_2d.default_color = idle_color if cooldown_timer.time_left == 0 else saw_player_color; 
 	var end_point = level_raycast.target_position
 	if level_raycast.is_colliding(): end_point = to_local(level_raycast.get_collision_point())
 	line_2d.set_point_position(1, end_point)
