@@ -9,11 +9,18 @@ var old_parent:Node
 @onready var cooldown:Timer = $Cooldown
 
 @export var can_suck_player:bool = true;
+
+## How many of the provided cannonballs this CAN spit out. 
+## If its spit out more than this, fire() won't do anything.
+@export var cannonballs:int = 50;
 signal cannonball_entered();
 
 func _ready():
 	input_area.body_entered.connect(on_body_entered_input)
 func fire():
+	if cannonballs <= 0:
+		return;
+	cannonballs -= 1;
 	cooldown.start();
 	var new_cannonball:SimpleBody
 	if cannonball_override: 
@@ -42,3 +49,5 @@ func on_body_entered_input(body):
 			simple_body.sleeping = true;
 			simple_body.linear_velocity = Vector2.ZERO;
 			cannonball_entered.emit()
+			# we just sucked one up, so
+			cannonballs += 1;

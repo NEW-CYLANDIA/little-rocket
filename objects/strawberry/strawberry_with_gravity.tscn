@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b56g44gcrii8d"]
+
+[ext_resource type="PackedScene" uid="uid://fsjnpsds4nq" path="res://objects/strawberry/strawberry.tscn" id="1_7mnxo"]
+
+[node name="Strawberry" unique_id=1815369928 instance=ExtResource("1_7mnxo")]
+gravity_scale = 0.5

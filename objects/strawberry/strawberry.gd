@@ -1,7 +1,8 @@
-extends Area2D
+extends SimpleBody
+@onready var ship_detector = $ShipDetector
 
 func _ready():
-	body_entered.connect(
+	ship_detector.body_entered.connect(
 		func(body): 
 			if body is Ship: 
 				#TODO: track this...somewhere
