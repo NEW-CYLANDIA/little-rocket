@@ -22,9 +22,13 @@ var extend_position:Vector2;
 
 @onready var chain = $Chain
 
-var retracted:bool = false;
+var retracting:bool = false;
 
+var move_complete:bool = false;
 var current_dest:Vector2;
+
+signal retracted();
+signal extended();
 
 func _ready():
 	if retract_position_reference:
@@ -45,25 +49,37 @@ func _process(delta):
 	chain.source = base;
 	chain.destination = attachment;
 	if not Engine.is_editor_hint():
-		if attachment is SimpleBody and use_physics:
-			attachment.gravity_scale = 0;
-			var force = (current_dest - attachment.position)
-			attachment.apply_central_force(force * speed - attachment.linear_velocity * damping_force)       
-		else:
-			if attachment.position.distance_to(current_dest) < 1:
-				attachment.position = current_dest;
+		if not move_complete:
+			if attachment is SimpleBody and use_physics:
+				attachment.gravity_scale = 0;
+				
+				print(attachment.linear_velocity)
+				var force = (current_dest - attachment.position)
+				attachment.apply_central_force(force * speed - attachment.linear_velocity * damping_force)       
+				if attachment.position.distance_to(current_dest) < 10 and attachment.linear_velocity.length() < 1:
+					move_completed();
 			else:
 				attachment.position = attachment.position.lerp(current_dest, delta * delta * speed)
-	
+				if attachment.position.distance_to(current_dest) < 1:
+					move_completed()
+					attachment.position = current_dest;
+				
+func move_completed():
+	print("Here")
+	move_complete = true;
+	if retracting: retracted.emit()
+	else: extended.emit();
 func extend(distance:float = 1):
-	retracted = false;
+	move_complete = false;
+	retracting = false;
 	current_dest = retract_position + (extend_position - retract_position) * distance
 func retract(distance:float = 1):
-	retracted = true;
+	move_complete = false;
+	retracting = true;
 	current_dest = extend_position - (extend_position - retract_position) * distance
 
 func toggle():
 	print("Here")
-	if retracted: extend()
+	if retracting: extend()
 	else: retract();
 	

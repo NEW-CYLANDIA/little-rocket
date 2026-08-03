@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
-size = Vector2(14, 9)
+size = Vector2(10.000001, 6)
 
 [node name="Switch" type="Area2D" unique_id=947060351 groups=["trigger"]]
 rotation = 3.1415927
@@ -54,7 +54,7 @@ frame = 1
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=855840400]
-position = Vector2(0, 3.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_i0uuj")
 
 [node name="CooldownTimer" type="Timer" parent="." unique_id=2093326109]

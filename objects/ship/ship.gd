@@ -24,6 +24,7 @@ var alive:bool = true;
 
 var wasd_direction = Vector2.UP;
 
+
 func _physics_process(delta):
 	if not alive: return;
 	var direction:Vector2 = Vector2.ZERO;

@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://i2g4sfupctu3" path="res://components/rocket/rocket.gd" id="1_r2l15"]
 [ext_resource type="Texture2D" uid="uid://c6pcjt4h6t24d" path="res://components/rocket/rocket.png" id="2_tpb7v"]
+[ext_resource type="PackedScene" uid="uid://3voeoisfjmqv" path="res://components/engine/engine.tscn" id="3_ttjbj"]
 
-[node name="Rocket" type="Node2D" unique_id=1185440983 groups=["triggerable"]]
+[node name="Rocket" type="Node2D" unique_id=1185440983 node_paths=PackedStringArray("engine") groups=["triggerable"]]
 script = ExtResource("1_r2l15")
 accel = 10.0
+engine = NodePath("Engine")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=578679037]
 texture = ExtResource("2_tpb7v")
@@ -13,3 +15,7 @@ texture = ExtResource("2_tpb7v")
 [node name="FuelExhaustTimer" type="Timer" parent="." unique_id=1219844124]
 wait_time = 0.2
 autostart = true
+
+[node name="Engine" parent="." unique_id=1898465837 node_paths=PackedStringArray("exhaust_source") instance=ExtResource("3_ttjbj")]
+position = Vector2(-4, 0)
+exhaust_source = NodePath("..")

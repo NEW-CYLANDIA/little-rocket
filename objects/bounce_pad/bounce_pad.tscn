@@ -47,13 +47,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0uuj"]
 size = Vector2(12, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8ruo"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlb7l"]
 size = Vector2(12, 2)
 
 [node name="BouncePad" type="StaticBody2D" unique_id=1247794687]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_dkqsl")
+bounce_speed = 430.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=915843431]
 position = Vector2(1.3113419e-07, 3.0000005)
@@ -65,13 +66,10 @@ animation = &"idle"
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_i0uuj")
 
-[node name="BouncePad" type="Area2D" parent="." unique_id=1587595348]
+[node name="Area2D" type="Area2D" parent="." unique_id=2056597263]
 collision_layer = 0
 collision_mask = 3
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="BouncePad" unique_id=399996638]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1010940949]
 position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_p8ruo")
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=276982491]
-target_position = Vector2(-2.1855694e-06, -50)
+shape = SubResource("RectangleShape2D_nlb7l")
