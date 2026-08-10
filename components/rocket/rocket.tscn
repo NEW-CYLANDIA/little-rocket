@@ -19,3 +19,4 @@ autostart = true
 [node name="Engine" parent="." unique_id=1898465837 node_paths=PackedStringArray("exhaust_source") instance=ExtResource("3_ttjbj")]
 position = Vector2(-4, 0)
 exhaust_source = NodePath("..")
+suck_speed = 1000.0

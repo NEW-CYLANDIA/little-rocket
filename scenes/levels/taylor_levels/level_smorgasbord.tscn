@@ -1,0 +1,131 @@
+[gd_scene format=4 uid="uid://c7o8elh4iqoxk"]
+
+[ext_resource type="PackedScene" uid="uid://yn5r6iaxkovl" path="res://scenes/levels/base_level.tscn" id="1_gyjg3"]
+[ext_resource type="PackedScene" uid="uid://bqkln7v3kbca2" path="res://components/wheel/wheel.tscn" id="2_fhu4e"]
+[ext_resource type="PackedScene" uid="uid://dw6avfl8awuk4" path="res://components/timer/timer.tscn" id="3_7gtd8"]
+[ext_resource type="Script" uid="uid://1rpg45rcorat" path="res://systems/toggle_group.gd" id="4_16df7"]
+[ext_resource type="PackedScene" uid="uid://d12y6vecq6ewb" path="res://components/rocket/rocket.tscn" id="4_hv7ai"]
+[ext_resource type="PackedScene" uid="uid://b1a38vlbtd5ap" path="res://objects/saw/saw.tscn" id="4_kau8d"]
+[ext_resource type="PackedScene" uid="uid://bccocynq72uu8" path="res://components/gun/gun.tscn" id="5_7lk2b"]
+[ext_resource type="PackedScene" uid="uid://dv2m1lsmkeua8" path="res://objects/arm/arm.tscn" id="7_hv7ai"]
+[ext_resource type="PackedScene" uid="uid://bsknh3cairn2e" path="res://objects/barrel/barrel.tscn" id="8_7lk2b"]
+[ext_resource type="PackedScene" uid="uid://nqstvonjfffj" path="res://objects/bounce_pad/bounce_pad.tscn" id="9_kk5yq"]
+[ext_resource type="PackedScene" uid="uid://dpv0n7mwxk2jh" path="res://objects/box/box.tscn" id="10_040p1"]
+[ext_resource type="PackedScene" uid="uid://jp280qwp77vy" path="res://objects/cannon/cannon.tscn" id="11_p4l50"]
+[ext_resource type="PackedScene" uid="uid://dh3nmvfkc07rp" path="res://objects/conveyor/conveyor_belt.tscn" id="12_y2hym"]
+[ext_resource type="PackedScene" uid="uid://ca8psg28bb0im" path="res://objects/conveyor/conveyor.tscn" id="13_vbdyk"]
+[ext_resource type="PackedScene" uid="uid://cs5fchmuspvhd" path="res://objects/switch/switch.tscn" id="15_kau8d"]
+[ext_resource type="PackedScene" uid="uid://ce4m3oax3ijsw" path="res://objects/water/water.tscn" id="16_16df7"]
+
+[node name="Level" unique_id=2144015312 instance=ExtResource("1_gyjg3")]
+
+[node name="Level" parent="." index="0" unique_id=1468971203]
+tile_map_data = PackedByteArray("AAC7/xoAAAAAAAAAAAC8/xoAAAAAAAAAAAC9/xoAAAAAAAAAAAC+/xoAAAAAAAAAAAC//xoAAAAAAAAAAADA/xoAAAAAAAAAAADB/xoAAAAAAAAAAADC/xoAAAAAAAAAAADD/xoAAAAAAAAAAADE/xoAAAAAAAAAAADF/xoAAAAAAAAAAADE/w4AAAABAAAAAADF/w4AAAABAAAAAADG/w4AAAABAAAAAADB/w4AAAABAAAAAADB/w8AAAABAAAAAADA/w8AAAABAAAAAADA/xAAAAABAAAAAAC//xAAAAABAAAAAAC//xEAAAABAAAAAAC+/xEAAAABAAAAAAC+/xIAAAABAAAAAAC9/xMAAAABAAAAAAC8/xMAAAABAAAAAAC8/xQAAAABAAAAAAC7/xUAAAABAAAAAAC6/xYAAAABAAAAAAC6/xcAAAABAAAAAAC6/xgAAAABAAAAAAC6/xkAAAABAAAAAAC6/xoAAAABAAAAAAC6/xsAAAABAAAAAAC7/xsAAAABAAAAAAC8/xwAAAABAAAAAAC9/xwAAAABAAAAAAC+/x0AAAABAAAAAAC//x4AAAABAAAAAADA/x4AAAABAAAAAADB/x8AAAABAAAAAADC/x8AAAABAAAAAADD/x8AAAABAAAAAAC//x8AAAABAAAAAADA/x8AAAABAAAAAADB/x4AAAABAAAAAADC/x4AAAABAAAAAADD/x4AAAABAAAAAADE/x4AAAABAAAAAADF/x4AAAABAAAAAADG/x4AAAABAAAAAADH/x4AAAABAAAAAADI/x4AAAABAAAAAADJ/x0AAAABAAAAAADK/x0AAAABAAAAAADL/x0AAAABAAAAAADM/x0AAAABAAAAAADN/xwAAAABAAAAAADO/xwAAAABAAAAAADP/xwAAAABAAAAAADQ/xsAAAABAAAAAADR/xsAAAABAAAAAADS/xoAAAABAAAAAADT/xoAAAABAAAAAADU/xoAAAABAAAAAADV/xkAAAABAAAAAADW/xgAAAABAAAAAADX/xcAAAABAAAAAADY/xcAAAABAAAAAADY/xYAAAABAAAAAADZ/xYAAAABAAAAAADZ/xUAAAABAAAAAADa/xUAAAABAAAAAADb/xQAAAABAAAAAADc/xMAAAABAAAAAADd/xIAAAABAAAAAADd/xEAAAABAAAAAADe/xEAAAABAAAAAADe/xAAAAABAAAAAADf/xAAAAABAAAAAADf/w8AAAABAAAAAADf/w4AAAABAAAAAADg/w4AAAABAAAAAADh/w0AAAABAAAAAADh/wwAAAABAAAAAADi/wwAAAABAAAAAADi/wsAAAABAAAAAADi/woAAAABAAAAAADj/woAAAABAAAAAADj/wkAAAABAAAAAADk/wgAAAABAAAAAADl/wcAAAABAAAAAADl/wYAAAABAAAAAADm/wYAAAABAAAAAADm/wUAAAABAAAAAADm/wQAAAABAAAAAADn/wQAAAABAAAAAADn/wMAAAABAAAAAADn/wIAAAABAAAAAADo/wIAAAABAAAAAADo/wEAAAABAAAAAADe//7/AAABAAAAAADf//3/AAABAAAAAADg//3/AAABAAAAAADh//3/AAABAAAAAADi//3/AAABAAAAAADj//z/AAABAAAAAADk//z/AAABAAAAAADl//z/AAABAAAAAADl//v/AAABAAAAAADm//v/AAABAAAAAADn//z/AAABAAAAAADn//3/AAABAAAAAADo//7/AAABAAAAAADo////AAABAAAAAADp/wAAAAABAAAAAAC9/xEAAAABAAAAAADC/w8AAAABAAAAAADD/w8AAAABAAAAAADH/w0AAAABAAAAAADI/w0AAAABAAAAAADJ/wwAAAABAAAAAADK/wwAAAABAAAAAADL/wsAAAABAAAAAADM/wsAAAABAAAAAADM/woAAAABAAAAAADN/woAAAABAAAAAADO/wkAAAABAAAAAADP/wkAAAABAAAAAADQ/wgAAAABAAAAAADR/wgAAAABAAAAAADR/wcAAAABAAAAAADS/wcAAAABAAAAAADT/wcAAAABAAAAAADT/wYAAAABAAAAAADU/wYAAAABAAAAAADV/wYAAAABAAAAAADW/wUAAAABAAAAAADX/wQAAAABAAAAAADY/wQAAAABAAAAAADY/wMAAAABAAAAAADZ/wMAAAABAAAAAADa/wIAAAABAAAAAADb/wEAAAABAAAAAADc/wAAAAABAAAAAADd/wAAAAABAAAAAADd////AAABAAAAAADe////AAABAAAAAADf//7/AAABAAAAAAC8/xsAAAABAAAAAAC8/x0AAAABAAAAAAC8/x4AAAABAAAAAAC9/xsAAAABAAAAAAC9/x0AAAABAAAAAAC9/x4AAAABAAAAAAC+/xsAAAABAAAAAAC+/xwAAAABAAAAAAC+/x4AAAABAAAAAAC//xsAAAABAAAAAAC//xwAAAABAAAAAAC//x0AAAABAAAAAADA/xsAAAABAAAAAADA/xwAAAABAAAAAADA/x0AAAABAAAAAADB/xsAAAABAAAAAADB/xwAAAABAAAAAADB/x0AAAABAAAAAADC/xsAAAABAAAAAADC/xwAAAABAAAAAADC/x0AAAABAAAAAADD/xsAAAABAAAAAADD/xwAAAABAAAAAADD/x0AAAABAAAAAADE/xsAAAABAAAAAADE/xwAAAABAAAAAADE/x0AAAABAAAAAADF/xsAAAABAAAAAADF/xwAAAABAAAAAADF/x0AAAABAAAAAAA=")
+
+[node name="PlayerSpawn" parent="." index="1" unique_id=2046660635]
+position = Vector2(-192, 0)
+
+[node name="Sequence 1" type="Node2D" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="0" unique_id=119937326]
+
+[node name="Wheel2" parent="LevelObjects/Sequence 1" index="0" unique_id=1357420367 instance=ExtResource("2_fhu4e")]
+position = Vector2(-304, 88)
+
+[node name="BouncePad" parent="LevelObjects/Sequence 1/Wheel2" index="1" unique_id=1247794687 instance=ExtResource("9_kk5yq")]
+position = Vector2(0, -15)
+
+[node name="BouncePad2" parent="LevelObjects/Sequence 1/Wheel2" index="2" unique_id=2130675005 instance=ExtResource("9_kk5yq")]
+position = Vector2(14, 0)
+rotation = 1.5707964
+
+[node name="BouncePad3" parent="LevelObjects/Sequence 1/Wheel2" index="3" unique_id=48657624 instance=ExtResource("9_kk5yq")]
+position = Vector2(0, 14)
+rotation = 3.1415927
+
+[node name="BouncePad4" parent="LevelObjects/Sequence 1/Wheel2" index="4" unique_id=990751235 instance=ExtResource("9_kk5yq")]
+position = Vector2(-14, 0)
+rotation = 4.712389
+
+[node name="Wheel3" parent="LevelObjects/Sequence 1" index="1" unique_id=260244531 instance=ExtResource("2_fhu4e")]
+position = Vector2(-384, 168)
+rotation = 0.7853982
+
+[node name="BouncePad" parent="LevelObjects/Sequence 1/Wheel3" index="1" unique_id=1998389796 instance=ExtResource("9_kk5yq")]
+position = Vector2(0, -15)
+
+[node name="BouncePad2" parent="LevelObjects/Sequence 1/Wheel3" index="2" unique_id=1090993817 instance=ExtResource("9_kk5yq")]
+position = Vector2(14, 0)
+rotation = 1.5707964
+
+[node name="BouncePad3" parent="LevelObjects/Sequence 1/Wheel3" index="3" unique_id=1579357157 instance=ExtResource("9_kk5yq")]
+position = Vector2(0, 14)
+rotation = 3.1415927
+
+[node name="BouncePad4" parent="LevelObjects/Sequence 1/Wheel3" index="4" unique_id=619261860 instance=ExtResource("9_kk5yq")]
+position = Vector2(-14, 0)
+rotation = 4.712389
+
+[node name="Wheel" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="1" unique_id=447890471 instance=ExtResource("2_fhu4e")]
+position = Vector2(-344, 128)
+continuous_speed = 45.0
+
+[node name="ToggleGroup" type="Node2D" parent="LevelObjects/Wheel" index="1" unique_id=1981353580]
+script = ExtResource("4_16df7")
+
+[node name="Arm2" parent="LevelObjects/Wheel/ToggleGroup" index="0" unique_id=184563611 node_paths=PackedStringArray("attachment") instance=ExtResource("7_hv7ai")]
+position = Vector2(-14, 0)
+rotation = -1.5707964
+attachment = NodePath("../Saw")
+start_retracted = true
+chain_links = 10
+
+[node name="Saw" parent="LevelObjects/Wheel/ToggleGroup" index="1" unique_id=369330409 instance=ExtResource("4_kau8d")]
+position = Vector2(-32, 0)
+
+[node name="Wheel2" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="2" unique_id=1746750239 instance=ExtResource("2_fhu4e")]
+position = Vector2(-264.00003, 47.999992)
+rotation = 1.5726134
+continuous_speed = 45.0
+
+[node name="Timer" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="3" unique_id=2141239095 instance=ExtResource("3_7gtd8")]
+position = Vector2(-48, -8)
+
+[node name="Rocket" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="4" unique_id=1185440983 instance=ExtResource("4_hv7ai")]
+position = Vector2(-96, -8)
+
+[node name="Gun" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="5" unique_id=1534434290 instance=ExtResource("5_7lk2b")]
+position = Vector2(-120, -8)
+
+[node name="Arm" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="6" unique_id=2119408330 node_paths=PackedStringArray("attachment") instance=ExtResource("7_hv7ai")]
+position = Vector2(-152, 16)
+attachment = NodePath("../Cannon")
+
+[node name="Barrel" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="7" unique_id=236329877 instance=ExtResource("8_7lk2b")]
+position = Vector2(-120, 16)
+
+[node name="Box" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="8" unique_id=1651556813 instance=ExtResource("10_040p1")]
+position = Vector2(-64, 16)
+
+[node name="Cannon" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="9" unique_id=462408111 instance=ExtResource("11_p4l50")]
+position = Vector2(-32, 8)
+
+[node name="ConveyorBelt" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="10" unique_id=144110766 instance=ExtResource("12_y2hym")]
+position = Vector2(0, 16)
+
+[node name="Conveyor" parent="LevelObjects/ConveyorBelt" index="0" unique_id=1297743976 instance=ExtResource("13_vbdyk")]
+
+[node name="Switch" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="11" unique_id=947060351 instance=ExtResource("15_kau8d")]
+position = Vector2(72, 24)
+rotation = -3.1415925
+
+[node name="Water" parent="LevelObjects" parent_id_path=PackedInt32Array(925880861) index="12" unique_id=1456241817 instance=ExtResource("16_16df7")]
+position = Vector2(112, 8)
+size = Vector2(1, 1)
+
+[node name="DeathZone" parent="." index="4" unique_id=75708491]
+collision_layer = 0
+
+[node name="Timer" parent="." index="6" unique_id=1877704699 instance=ExtResource("3_7gtd8")]
+position = Vector2(-288, 232)
+wait_time = 1.0
+
+[connection signal="timeout" from="Timer" to="LevelObjects/Wheel/ToggleGroup" method="toggle"]

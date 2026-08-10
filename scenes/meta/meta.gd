@@ -6,6 +6,7 @@ enum Scene {
 
 @export var scenes:Dictionary[Scene, PackedScene]
 @export var first_scene:Meta.Scene;
+@export var testing:bool = false;
 var current_scene:Node2D = null
 
 static var instance:Meta;

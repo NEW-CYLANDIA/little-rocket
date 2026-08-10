@@ -17,6 +17,7 @@ func _physics_process(_delta):
 	line_2d.set_point_position(1, end_point)
 	detection_raycast.target_position = end_point;
 	if detection_raycast.is_colliding() and cooldown_timer.time_left == 0:
+		print(detection_raycast.get_collider().name)
 		saw_player.emit()
 		cooldown_timer.start(cooldown);
 

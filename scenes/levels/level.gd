@@ -16,7 +16,7 @@ func _ready():
 		failed.emit()
 	)
 	
-	if test_mode:
+	if not Meta.instance or Meta.instance.testing:
 		failed.connect(get_tree().reload_current_scene)
 
 func _process(_delta):
