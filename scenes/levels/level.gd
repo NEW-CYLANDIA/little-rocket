@@ -3,10 +3,12 @@ class_name Level
 @onready var ship = $PlayerSpawn/Ship
 
 @export var test_mode:bool = false;
+signal started();
 signal completed()
 signal failed()
 
 func _ready():
+	started.emit();
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
 	ship.died.connect(func(): 
@@ -14,7 +16,7 @@ func _ready():
 		failed.emit()
 	)
 	
-	if test_mode:
+	if not Meta.instance or Meta.instance.testing:
 		failed.connect(get_tree().reload_current_scene)
 
 func _process(_delta):

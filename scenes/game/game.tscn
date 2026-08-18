@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://xh7vxm2l5rae"]
 
 [ext_resource type="Script" uid="uid://348oiqrw0ao1" path="res://scenes/game/game.gd" id="1_otnwt"]
-[ext_resource type="PackedScene" uid="uid://cmbpchu4iggo5" path="res://scenes/levels/sandbox.tscn" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://lv37dksxq4uj" path="res://scenes/levels/colin_levels/level_1.tscn" id="2_87uf6"]
 [ext_resource type="FontFile" uid="uid://b1gt1wqnvltp8" path="res://More 15.ttf" id="3_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://bk7lben460j7l" path="res://scenes/levels/colin_levels/level_3.tscn" id="3_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://b74p5m3t61vqh" path="res://scenes/levels/colin_levels/level_5.tscn" id="4_4j704"]
+[ext_resource type="PackedScene" uid="uid://dhg80vpersvrg" path="res://scenes/levels/taylor_levels/level_bouncepads.tscn" id="5_kp23o"]
+[ext_resource type="PackedScene" uid="uid://b8hq0ejgldoue" path="res://scenes/levels/taylor_levels/level_cannons.tscn" id="6_5jirj"]
+[ext_resource type="PackedScene" uid="uid://2t3bt2i26yat" path="res://scenes/levels/taylor_levels/level_conveyors.tscn" id="7_vaxfo"]
+[ext_resource type="PackedScene" uid="uid://bmqeqij3wlej7" path="res://scenes/levels/taylor_levels/level_eyes.tscn" id="8_2a8rs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7h61r"]
 font = ExtResource("3_0sr1o")
@@ -10,7 +16,7 @@ font_size = 32
 
 [node name="Game" type="Node2D" unique_id=2144015312]
 script = ExtResource("1_otnwt")
-level_override = ExtResource("2_0sr1o")
+levels = Array[PackedScene]([ExtResource("2_87uf6"), ExtResource("3_2a8rs"), ExtResource("4_4j704"), ExtResource("5_kp23o"), ExtResource("6_5jirj"), ExtResource("7_vaxfo"), ExtResource("8_2a8rs")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=368567300]
 

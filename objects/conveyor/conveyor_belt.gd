@@ -6,7 +6,6 @@ var conveyors:Array[Conveyor]
 @export var start_on:bool = false;
 
 func _ready():
-	
 	for child in get_children():
 		var conveyor = child as Conveyor
 		conveyor.speed = speed;

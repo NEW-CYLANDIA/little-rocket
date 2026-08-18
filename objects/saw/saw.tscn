@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b1a38vlbtd5ap"]
+
+[ext_resource type="Script" uid="uid://bn3m3qdt4cxeg" path="res://objects/saw/saw.gd" id="1_bf4fn"]
+[ext_resource type="Texture2D" uid="uid://cjb06bxklfoqk" path="res://objects/saw/saw.png" id="2_3gvk6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0uuj"]
+radius = 6.0
+
+[node name="Saw" type="Area2D" unique_id=369330409]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_bf4fn")
+rotation_amt = 45.0
+rotation_interval = 0.075
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1095559664]
+rotation = 1704.7433
+texture = ExtResource("2_3gvk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1718524149]
+shape = SubResource("CircleShape2D_i0uuj")

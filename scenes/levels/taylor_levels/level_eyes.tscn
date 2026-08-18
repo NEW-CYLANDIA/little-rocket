@@ -46,13 +46,13 @@ position = Vector2(-82, 120)
 gravity_scale = 0.0
 size = Vector2(5, 1)
 
-[node name="Barrel" parent="." index="7" unique_id=236329877 instance=ExtResource("6_ol6cl")]
+[node name="Barrel" parent="." index="6" unique_id=236329877 instance=ExtResource("6_ol6cl")]
 position = Vector2(-392, 160)
 
-[node name="Barrel2" parent="." index="8" unique_id=1037646015 instance=ExtResource("6_ol6cl")]
+[node name="Barrel2" parent="." index="7" unique_id=1037646015 instance=ExtResource("6_ol6cl")]
 position = Vector2(-320, 224)
 
-[node name="Barrel3" parent="." index="9" unique_id=1991072054 instance=ExtResource("6_ol6cl")]
+[node name="Barrel3" parent="." index="8" unique_id=1991072054 instance=ExtResource("6_ol6cl")]
 position = Vector2(-96, 224)
 
 [connection signal="saw_player" from="LevelObjects/Eye" to="LevelObjects/Arm2" method="extend"]

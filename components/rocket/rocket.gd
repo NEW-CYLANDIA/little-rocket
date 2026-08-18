@@ -5,6 +5,7 @@ var on:bool = false;
 var velocity:Vector2 = Vector2.ZERO;
 @export var engine:FuelEngine;
 @onready var fuel_exhaust_timer = $FuelExhaustTimer
+@onready var builtin_engine = $Engine
 
 @export var debug_print:bool = false;
 func _ready():
@@ -12,6 +13,7 @@ func _ready():
 	fuel_exhaust_timer.timeout.connect(func():
 		engine.get_fuel(1);
 	)
+	if engine: builtin_engine.visible = false;
 func _process(_delta):
 	fuel_exhaust_timer.paused = not on;
 	

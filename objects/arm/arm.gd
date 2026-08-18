@@ -12,27 +12,34 @@ extends Node2D
 @export var damping_force:float = 10.0;
 
 var retract_position:Vector2;
-var extend_position:Vector2;
+var extend_distance:float;
 @export var start_retracted:bool = false;
 
 @export var chain_links:int = 20;
+
 @export_tool_button("Update links") var update_links_action = _update_links;
+
+
 
 @onready var base = $Base
 
 @onready var chain = $Chain
 
-var retracted:bool = false;
+var retracting:bool = false;
 
+var move_complete:bool = false;
 var current_dest:Vector2;
 
+signal retracted();
+signal extended();
+
 func _ready():
-	if retract_position_reference:
-		retract_position = retract_position_reference.position;
-	else: retract_position = base.global_position
-	extend_position = attachment.position;
+	await get_tree().process_frame
+	extend_distance = (attachment.position - get_retract_position()).length();
 	if start_retracted: 
-		retract();
+		if not use_physics:
+			attachment.position = get_retract_position()
+		retract()
 	else:
 		extend();
 	_update_links();
@@ -40,30 +47,43 @@ func _ready():
 func _update_links():
 	chain.set_link_amt(chain_links)
 	
-
+func get_retract_position():
+	if retract_position_reference:
+		return retract_position_reference.position;
+	else: 
+		return position
 func _process(delta):
 	chain.source = base;
 	chain.destination = attachment;
 	if not Engine.is_editor_hint():
+		if retracting: current_dest = get_retract_position()
+		else: current_dest = get_retract_position() + Vector2.from_angle(rotation - PI/2)*extend_distance
 		if attachment is SimpleBody and use_physics:
 			attachment.gravity_scale = 0;
+			
 			var force = (current_dest - attachment.position)
 			attachment.apply_central_force(force * speed - attachment.linear_velocity * damping_force)       
+			if attachment.position.distance_to(current_dest) < 10 and attachment.linear_velocity.length() < 1:
+				move_completed();
 		else:
+			attachment.position = attachment.position.lerp(current_dest, delta * delta * speed)
 			if attachment.position.distance_to(current_dest) < 1:
+				move_completed()
 				attachment.position = current_dest;
-			else:
-				attachment.position = attachment.position.lerp(current_dest, delta * delta * speed)
-	
-func extend(distance:float = 1):
-	retracted = false;
-	current_dest = retract_position + (extend_position - retract_position) * distance
-func retract(distance:float = 1):
-	retracted = true;
-	current_dest = extend_position - (extend_position - retract_position) * distance
+				
+func move_completed():
+	print("Here")
+	move_complete = true;
+	if retracting: retracted.emit()
+	else: extended.emit();
+func extend():
+	move_complete = false;
+	retracting = false;
+func retract():
+	move_complete = false;
+	retracting = true;
 
 func toggle():
-	print("Here")
-	if retracted: extend()
+	if retracting: extend()
 	else: retract();
 	
