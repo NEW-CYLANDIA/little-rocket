@@ -9,11 +9,11 @@
 script = ExtResource("1_vopon")
 
 [node name="Base" type="Sprite2D" parent="." unique_id=229118030]
-position = Vector2(0, 4)
+position = Vector2(0, -1)
 texture = ExtResource("2_i5xt7")
 
 [node name="Chain" type="Node2D" parent="." unique_id=1710703765 node_paths=PackedStringArray("source")]
-position = Vector2(0, 2)
+position = Vector2(0, -3)
 script = ExtResource("3_bo74x")
 source = NodePath("../Base")
 link_amount = 10

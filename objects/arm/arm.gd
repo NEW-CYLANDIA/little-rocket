@@ -16,7 +16,10 @@ var extend_distance:float;
 @export var start_retracted:bool = false;
 
 @export var chain_links:int = 20;
+
 @export_tool_button("Update links") var update_links_action = _update_links;
+
+
 
 @onready var base = $Base
 
@@ -31,10 +34,12 @@ signal retracted();
 signal extended();
 
 func _ready():
-
-	extend_distance = (attachment.global_position - get_retract_position()).length();
+	await get_tree().process_frame
+	extend_distance = (attachment.position - get_retract_position()).length();
 	if start_retracted: 
-		retract();
+		if not use_physics:
+			attachment.position = get_retract_position()
+		retract()
 	else:
 		extend();
 	_update_links();
@@ -44,28 +49,27 @@ func _update_links():
 	
 func get_retract_position():
 	if retract_position_reference:
-		return retract_position_reference.global_position;
+		return retract_position_reference.position;
 	else: 
-		return base.global_position
+		return position
 func _process(delta):
 	chain.source = base;
 	chain.destination = attachment;
 	if not Engine.is_editor_hint():
-		if not move_complete:
-			if retracting: current_dest = get_retract_position()
-			else: current_dest = get_retract_position() + Vector2.from_angle(global_rotation)*extend_distance
-			if attachment is SimpleBody and use_physics:
-				attachment.gravity_scale = 0;
-				
-				var force = (current_dest - attachment.position)
-				attachment.apply_central_force(force * speed - attachment.linear_velocity * damping_force)       
-				if attachment.position.distance_to(current_dest) < 10 and attachment.linear_velocity.length() < 1:
-					move_completed();
-			else:
-				attachment.global_position = attachment.global_position.lerp(current_dest, delta * delta * speed)
-				if attachment.global_position.distance_to(current_dest) < 1:
-					move_completed()
-					attachment.global_position = current_dest;
+		if retracting: current_dest = get_retract_position()
+		else: current_dest = get_retract_position() + Vector2.from_angle(rotation - PI/2)*extend_distance
+		if attachment is SimpleBody and use_physics:
+			attachment.gravity_scale = 0;
+			
+			var force = (current_dest - attachment.position)
+			attachment.apply_central_force(force * speed - attachment.linear_velocity * damping_force)       
+			if attachment.position.distance_to(current_dest) < 10 and attachment.linear_velocity.length() < 1:
+				move_completed();
+		else:
+			attachment.position = attachment.position.lerp(current_dest, delta * delta * speed)
+			if attachment.position.distance_to(current_dest) < 1:
+				move_completed()
+				attachment.position = current_dest;
 				
 func move_completed():
 	print("Here")
@@ -80,7 +84,6 @@ func retract():
 	retracting = true;
 
 func toggle():
-	print("Here")
 	if retracting: extend()
 	else: retract();
 	
