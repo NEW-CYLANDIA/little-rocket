@@ -129,3 +129,4 @@ use_physics = true
 [connection signal="cannonball_entered" from="LevelObjects/Cannon3" to="LevelObjects/Cannon3" method="fire"]
 [connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ConveyorBelt" method="reverse"]
 [connection signal="switched" from="LevelObjects/Switch2" to="LevelObjects/ToggleGroup" method="toggle"]
+[connection signal="switched" from="LevelObjects/Switch3" to="Arm" method="toggle"]
